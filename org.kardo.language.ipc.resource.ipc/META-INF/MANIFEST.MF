@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: ipc
+Bundle-SymbolicName: org.kardo.language.ipc.resource.ipc;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  org.kardo.language.ipc,
+  org.kardo.language.aspectj,
+  org.emftext.language.java,
+  org.emftext.commons.layout,
+  org.kardo.language.aspectj.resource.aspectj,
+  org.emftext.language.java.resource.java
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.kardo.language.ipc.resource.ipc,
+  org.kardo.language.ipc.resource.ipc.analysis,
+  org.kardo.language.ipc.resource.ipc.mopp,
+  org.kardo.language.ipc.resource.ipc.debug,
+  org.kardo.language.ipc.resource.ipc.launch,
+  org.kardo.language.ipc.resource.ipc.grammar,
+  org.kardo.language.ipc.resource.ipc.util
+Bundle-Activator: org.kardo.language.ipc.resource.ipc.mopp.IpcPlugin

@@ -1,0 +1,5 @@
+public aspect Kardo{
+ 
+	instance pointcut p1<Integer> : after(* call(MyType.m()) && args(instance));	
+
+}

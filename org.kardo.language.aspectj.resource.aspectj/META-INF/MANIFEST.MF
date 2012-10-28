@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMFText Parser Plugin: aspectj
+Bundle-SymbolicName: org.kardo.language.aspectj.resource.aspectj;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Software Technology Group - TU Dresden Germany
+Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
+  org.eclipse.core.resources;resolution:=optional,
+  org.eclipse.emf.ecore,
+  org.eclipse.emf.ecore.change,
+  org.eclipse.emf.validation;resolution:=optional,
+  org.emftext.access;resolution:=optional,
+  org.emftext.commons.antlr3_4_0,
+  org.kardo.language.aspectj,
+  org.emftext.language.java,
+  org.emftext.commons.layout,
+  org.emftext.language.java.resource.java
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.kardo.language.aspectj.resource.aspectj,
+  org.kardo.language.aspectj.resource.aspectj.analysis,
+  org.kardo.language.aspectj.resource.aspectj.mopp,
+  org.kardo.language.aspectj.resource.aspectj.debug,
+  org.kardo.language.aspectj.resource.aspectj.launch,
+  org.kardo.language.aspectj.resource.aspectj.grammar,
+  org.kardo.language.aspectj.resource.aspectj.util
+Bundle-Activator: org.kardo.language.aspectj.resource.aspectj.mopp.AspectjPlugin

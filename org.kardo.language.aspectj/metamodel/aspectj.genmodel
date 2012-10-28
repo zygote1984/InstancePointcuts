@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.kardo.language.aspectj/src-gen" modelPluginID="org.kardo.language.aspectj"
+    modelName="aspectj" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.emftext.language.java/metamodel/java.genmodel#//java platform:/plugin/org.emftext.commons.layout/metamodel/layout.genmodel#//layout">
+  <foreignModel>aspectj.ecore</foreignModel>
+  <foreignModel>../../../plugin/org.emftext.language.java/metamodel/java.ecore</foreignModel>
+  <genPackages prefix="Aspectj" basePackage="org.kardo.language" disposableProviderFactory="true"
+      ecorePackage="aspectj.ecore#/">
+    <nestedGenPackages prefix="Pointcuts" basePackage="org.kardo.language.aspectj"
+        disposableProviderFactory="true" ecorePackage="aspectj.ecore#//pointcuts">
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pointcuts/PrimitivePointcut">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//pointcuts/PrimitivePointcut/pattern"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/CallPointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/ExecutionPointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/GetPointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/SetPointcut"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pointcuts/HandlerPointcut"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pointcuts/AdviceExecutionPointcut"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pointcuts/StaticInitPointcut"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pointcuts/InitPointcut"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pointcuts/PreInitPointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/WithinPointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/WithinCodePointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/ThisPointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/TargetPointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/ArgsPointcut"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/CFlowPointcut">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference aspectj.ecore#//pointcuts/CFlowPointcut/pointcut"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/CFlowBelowPointcut">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference aspectj.ecore#//pointcuts/CFlowBelowPointcut/pointcut"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/IfPointcut"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pointcuts/Pointcut">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//pointcuts/Pointcut/assign"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/AspectJPointcut">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//pointcuts/AspectJPointcut/exp"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//pointcuts/AspectJPointcut/abstract"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pointcuts/ContextExposurePc"/>
+      <genClasses ecoreClass="aspectj.ecore#//pointcuts/ReturningPointcut"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Commons" basePackage="org.kardo.language.aspectj" disposableProviderFactory="true"
+        ecorePackage="aspectj.ecore#//commons">
+      <genClasses image="false" ecoreClass="aspectj.ecore#//commons/AspectMember"/>
+      <genClasses ecoreClass="aspectj.ecore#//commons/Aspect">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aspectj.ecore#//commons/Aspect/priviliged"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//commons/Aspect/extend"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//commons/Aspect/defaultExtends"/>
+        <genOperations ecoreOperation="aspectj.ecore#//commons/Aspect/getSuperClass"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//commons/AspectJCompilationUnit">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//commons/AspectJCompilationUnit/classifiers"/>
+        <genOperations ecoreOperation="aspectj.ecore#//commons/AspectJCompilationUnit/getContainedClassifier">
+          <genParameters ecoreParameter="aspectj.ecore#//commons/AspectJCompilationUnit/getContainedClassifier/name"/>
+        </genOperations>
+        <genOperations ecoreOperation="aspectj.ecore#//commons/AspectJCompilationUnit/getClassifiersInSamePackage"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Pcexp" basePackage="org.kardo.language.aspectj" disposableProviderFactory="true"
+        ecorePackage="aspectj.ecore#//pcexp">
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pcexp/PointcutExpressionChild"/>
+      <genClasses ecoreClass="aspectj.ecore#//pcexp/PointcutExpression"/>
+      <genClasses ecoreClass="aspectj.ecore#//pcexp/PointcutOrExpression">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//pcexp/PointcutOrExpression/children"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pcexp/PointcutOrExpressionChild"/>
+      <genClasses ecoreClass="aspectj.ecore#//pcexp/PointcutAndExpression">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//pcexp/PointcutAndExpression/children"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//pcexp/PointcutAndExpressionChild"/>
+      <genClasses ecoreClass="aspectj.ecore#//pcexp/PcAssignmentOperator"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Patterns" basePackage="org.kardo.language.aspectj"
+        disposableProviderFactory="true" ecorePackage="aspectj.ecore#//patterns">
+      <genClasses image="false" ecoreClass="aspectj.ecore#//patterns/Pattern"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//patterns/AbstractMethodPattern"/>
+      <genClasses ecoreClass="aspectj.ecore#//patterns/FieldPattern">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/FieldPattern/modifiers"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/FieldPattern/declaringType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/FieldPattern/fieldType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aspectj.ecore#//patterns/FieldPattern/fieldname"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//patterns/ConstructorPattern">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/ConstructorPattern/modifiers"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/ConstructorPattern/declaringType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/ConstructorPattern/parameters"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//patterns/MethodPattern">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/MethodPattern/modifiers"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/MethodPattern/returnType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/MethodPattern/declaringType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/MethodPattern/parameters"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/MethodPattern/methodname"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//patterns/TypePattern">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/TypePattern/type"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/TypePattern/subtypes"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//patterns/IdPattern">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference aspectj.ecore#//patterns/IdPattern/id"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//patterns/TypeOrIdPattern"/>
+      <genClasses ecoreClass="aspectj.ecore#//patterns/ParameterWildcard"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//patterns/WildcardPattern"/>
+      <genClasses image="false" ecoreClass="aspectj.ecore#//patterns/WildcardOrTypePattern"/>
+      <genClasses ecoreClass="aspectj.ecore#//patterns/ConditionalExprPattern">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//patterns/ConditionalExprPattern/expr"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Advice" basePackage="org.kardo.language.aspectj" disposableProviderFactory="true"
+        ecorePackage="aspectj.ecore#//advice">
+      <genClasses image="false" ecoreClass="aspectj.ecore#//advice/Advice">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference aspectj.ecore#//advice/Advice/pcref"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//advice/Advice/assign"/>
+      </genClasses>
+      <genClasses ecoreClass="aspectj.ecore#//advice/AfterAdvice"/>
+      <genClasses ecoreClass="aspectj.ecore#//advice/BeforeAdvice"/>
+      <genClasses ecoreClass="aspectj.ecore#//advice/AfterReturning">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aspectj.ecore#//advice/AfterReturning/returning"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

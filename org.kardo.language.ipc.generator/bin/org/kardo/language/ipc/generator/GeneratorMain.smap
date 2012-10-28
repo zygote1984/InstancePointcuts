@@ -1,0 +1,28 @@
+SMAP
+GeneratorMain.java
+Xtend
+*S Xtend
+*F
++ 0 GeneratorMain.xtend
+src/org/kardo/language/ipc/generator/GeneratorMain.xtend
+*L
+24:26
+27:29
+32:32
+33:33
+34:34,2
+35:36,3
+37:39
+39:40,4
+41:44,2
+39:46
+37:47
+45:48,2
+47:50
+48:51
+49:52,3
+50:55,3
+51:58
+52:59,6
+45:65,2
+*E

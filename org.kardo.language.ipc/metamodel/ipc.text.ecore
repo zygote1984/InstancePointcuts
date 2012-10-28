@@ -1,0 +1,39 @@
+@"import"("java"="platform:/plugin/org.emftext.language.java/metamodel/java.ecore", "aspectj"="platform:/resource/org.kardo.language.aspectj/metamodel/aspectj.ecore")
+
+package ipc // this is the package name 
+        ipc // this is the namespace prefix
+        "http://www.emftext.org/language/ipc" // the namespace URI 
+	{
+
+
+
+	class InstancePointcut extends aspectj::commons::AspectMember{
+		containment reference aspectj::pcexp::PcAssignmentOperator assign (1..1);
+		containment reference java::types::TypeReference type (1..1) ;
+		containment reference IpcExpression expr(1..1);
+	}
+
+	class IpcExpression{
+		containment reference IpcSubExpression addExpression(1..1);
+		containment reference IpcSubExpression removeExpression(0..1);
+	}
+
+	class IpcSubExpression{
+	    containment reference BeforeEvent before(0..1);
+		containment reference AfterEvent after(0..1);
+	}
+	
+	abstract class Event{
+		containment reference aspectj::pcexp::PointcutExpression pcexp (1..1);
+	}
+	
+	class BeforeEvent extends Event{
+	
+	}
+	
+	class AfterEvent extends Event{
+	
+	}
+	
+
+}
