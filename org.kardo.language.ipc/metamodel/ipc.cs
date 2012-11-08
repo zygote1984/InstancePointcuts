@@ -24,21 +24,37 @@ OPTIONS {
 
 TOKENSTYLES {
 	
-	"instance pointcut" COLOR #FF0011, BOLD;
-	"UNTIL" COLOR #FF0011, BOLD;
-	"after" COLOR #FF5511, BOLD;
-	"before" COLOR #FF5511, BOLD;
+	"instance pointcut" COLOR #FF00AA, BOLD;
+	"composite instance pointcut" COLOR #FF00AA, BOLD;
+	"UNTIL" COLOR #FF00AA, BOLD;
+	"afterevent" COLOR #FF55AA, BOLD;
+	"beforeevent" COLOR #FF55AA, BOLD;
+	"inter" COLOR #FF55AA, BOLD;
+	"union" COLOR #FF55AA, BOLD;
 
 }
 
 RULES {
 
 
+	ipc.AfterEvent ::= "afterevent"#0"("pcexp")";
+	ipc.BeforeEvent ::= "beforeevent"#0"("pcexp")";
 	ipc.InstancePointcut::= "instance pointcut" name[]#0"<"type">" assign expr ";";
 	ipc.IpcExpression::= addExpression ("UNTIL" removeExpression)?;
-	ipc.IpcSubExpression::= before "||" after | after "||" before | before | after;
-	ipc.AfterEvent ::= "after"#0"("pcexp")";
-	ipc.BeforeEvent ::= "before"#0"("pcexp")";
+	ipc.IpcSubExpression::= event:BeforeEvent ("||" event:AfterEvent)? | 
+		event:AfterEvent ("||" event:BeforeEvent)? ;
+	
+	//Instance pointcut composition
+	ipc.CompositeInstancePointcut ::= "composite instance pointcut" name[]#0("<"type">")? assign compexpr ";";
+	ipc.IpcComposition ::= child;
+	ipc.IpcUnion ::= children ("union" children)*;
+	ipc.IpcIntersection ::=  "(" terms[] ("inter" terms[])+ ")" | terms[] ("inter" terms[])*  ;
+	
+	
+	
+
+
+
 
 
 }

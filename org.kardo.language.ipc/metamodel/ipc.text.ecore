@@ -6,9 +6,10 @@ package ipc // this is the package name
 	{
 
 
+	abstract class Ipc extends IpcUnionChild{
+	}
 
-	class InstancePointcut extends aspectj::commons::AspectMember{
-		containment reference aspectj::pcexp::PcAssignmentOperator assign (1..1);
+	class InstancePointcut extends aspectj::pointcuts::Pointcut, Ipc{
 		containment reference java::types::TypeReference type (1..1) ;
 		containment reference IpcExpression expr(1..1);
 	}
@@ -19,8 +20,7 @@ package ipc // this is the package name
 	}
 
 	class IpcSubExpression{
-	    containment reference BeforeEvent before(0..1);
-		containment reference AfterEvent after(0..1);
+	    containment reference Event event(1..2);
 	}
 	
 	abstract class Event{
@@ -35,5 +35,32 @@ package ipc // this is the package name
 	
 	}
 	
+	class CompositeInstancePointcut extends aspectj::pointcuts::Pointcut, Ipc{
+		containment reference java::types::TypeReference type(0..1);
+		containment reference IpcComposition compexpr(1..1);
+	}
+	
+	class IpcComposition {
+		containment reference IpcCompositionChild child(1..1);
+	}
+
+	abstract class IpcCompositionChild{
+	}
+	
+	class IpcUnion extends IpcCompositionChild{
+		containment reference IpcUnionChild children(0..-1);
+	}
+	
+	abstract class IpcUnionChild{
+	}
+	
+	class IpcIntersection extends IpcUnionChild{
+		reference Ipc terms(1..-1);
+	}
+	
+
+
+
+
 
 }

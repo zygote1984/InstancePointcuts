@@ -36,8 +36,8 @@ public class IpcBracketInformationProvider {
 	
 	public java.util.Collection<org.kardo.language.ipc.resource.ipc.IIpcBracketPair> getBracketPairs() {
 		java.util.Collection<org.kardo.language.ipc.resource.ipc.IIpcBracketPair> result = new java.util.ArrayList<org.kardo.language.ipc.resource.ipc.IIpcBracketPair>();
-		result.add(new BracketPair("<", ">", true));
 		result.add(new BracketPair("(", ")", true));
+		result.add(new BracketPair("<", ">", true));
 		result.add(new BracketPair("{", "}", true));
 		result.add(new BracketPair("[", "]", true));
 		return result;

@@ -52,6 +52,14 @@ public class IpcPrinter implements org.kardo.language.ipc.resource.ipc.IIpcTextP
 			throw new java.lang.IllegalArgumentException("Nothing to write on.");
 		}
 		
+		if (element instanceof org.kardo.language.ipc.AfterEvent) {
+			print_org_kardo_language_ipc_AfterEvent((org.kardo.language.ipc.AfterEvent) element, globaltab, out);
+			return;
+		}
+		if (element instanceof org.kardo.language.ipc.BeforeEvent) {
+			print_org_kardo_language_ipc_BeforeEvent((org.kardo.language.ipc.BeforeEvent) element, globaltab, out);
+			return;
+		}
 		if (element instanceof org.kardo.language.ipc.InstancePointcut) {
 			print_org_kardo_language_ipc_InstancePointcut((org.kardo.language.ipc.InstancePointcut) element, globaltab, out);
 			return;
@@ -64,12 +72,20 @@ public class IpcPrinter implements org.kardo.language.ipc.resource.ipc.IIpcTextP
 			print_org_kardo_language_ipc_IpcSubExpression((org.kardo.language.ipc.IpcSubExpression) element, globaltab, out);
 			return;
 		}
-		if (element instanceof org.kardo.language.ipc.AfterEvent) {
-			print_org_kardo_language_ipc_AfterEvent((org.kardo.language.ipc.AfterEvent) element, globaltab, out);
+		if (element instanceof org.kardo.language.ipc.CompositeInstancePointcut) {
+			print_org_kardo_language_ipc_CompositeInstancePointcut((org.kardo.language.ipc.CompositeInstancePointcut) element, globaltab, out);
 			return;
 		}
-		if (element instanceof org.kardo.language.ipc.BeforeEvent) {
-			print_org_kardo_language_ipc_BeforeEvent((org.kardo.language.ipc.BeforeEvent) element, globaltab, out);
+		if (element instanceof org.kardo.language.ipc.IpcComposition) {
+			print_org_kardo_language_ipc_IpcComposition((org.kardo.language.ipc.IpcComposition) element, globaltab, out);
+			return;
+		}
+		if (element instanceof org.kardo.language.ipc.IpcUnion) {
+			print_org_kardo_language_ipc_IpcUnion((org.kardo.language.ipc.IpcUnion) element, globaltab, out);
+			return;
+		}
+		if (element instanceof org.kardo.language.ipc.IpcIntersection) {
+			print_org_kardo_language_ipc_IpcIntersection((org.kardo.language.ipc.IpcIntersection) element, globaltab, out);
 			return;
 		}
 		if (element instanceof org.kardo.language.aspectj.commons.AspectJCompilationUnit) {
@@ -846,6 +862,74 @@ public class IpcPrinter implements org.kardo.language.ipc.resource.ipc.IIpcTextP
 		out.close();
 	}
 	
+	public void print_org_kardo_language_ipc_AfterEvent(org.kardo.language.ipc.AfterEvent element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
+		// The printCountingMap contains a mapping from feature names to the number of
+		// remaining elements that still need to be printed. The map is initialized with
+		// the number of elements stored in each structural feature. For lists this is the
+		// list size. For non-multiple features it is either 1 (if the feature is set) or
+		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.AFTER_EVENT__PCEXP));
+		printCountingMap.put("pcexp", temp == null ? 0 : 1);
+		// print collected hidden tokens
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("afterevent");
+		// DEFINITION PART BEGINS (WhiteSpaces)
+		// DEFINITION PART BEGINS (CsString)
+		out.print("(");
+		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("pcexp");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.AFTER_EVENT__PCEXP));
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("pcexp", count - 1);
+		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(")");
+		out.print(" ");
+	}
+	
+	
+	public void print_org_kardo_language_ipc_BeforeEvent(org.kardo.language.ipc.BeforeEvent element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
+		// The printCountingMap contains a mapping from feature names to the number of
+		// remaining elements that still need to be printed. The map is initialized with
+		// the number of elements stored in each structural feature. For lists this is the
+		// list size. For non-multiple features it is either 1 (if the feature is set) or
+		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.BEFORE_EVENT__PCEXP));
+		printCountingMap.put("pcexp", temp == null ? 0 : 1);
+		// print collected hidden tokens
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("beforeevent");
+		// DEFINITION PART BEGINS (WhiteSpaces)
+		// DEFINITION PART BEGINS (CsString)
+		out.print("(");
+		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("pcexp");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.BEFORE_EVENT__PCEXP));
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("pcexp", count - 1);
+		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(")");
+		out.print(" ");
+	}
+	
+	
 	public void print_org_kardo_language_ipc_InstancePointcut(org.kardo.language.ipc.InstancePointcut element, String outertab, java.io.PrintWriter out) {
 		String localtab = outertab;
 		// The printCountingMap contains a mapping from feature names to the number of
@@ -988,174 +1072,505 @@ public class IpcPrinter implements org.kardo.language.ipc.resource.ipc.IIpcTextP
 		// the number of elements stored in each structural feature. For lists this is the
 		// list size. For non-multiple features it is either 1 (if the feature is set) or
 		// 0 (if the feature is null).
-		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(2);
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
 		Object temp;
-		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__BEFORE));
-		printCountingMap.put("before", temp == null ? 0 : 1);
-		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__AFTER));
-		printCountingMap.put("after", temp == null ? 0 : 1);
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT));
+		printCountingMap.put("event", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
 		// print collected hidden tokens
 		int count;
 		int alt = -1;
 		alt = 0;
-		int matches = 		matchCount(printCountingMap, java.util.Arrays.asList(		"before"		,
-		"after"		));
+		int matches = 		matchCount(printCountingMap, java.util.Arrays.asList(		"event"		));
 		int tempMatchCount;
-		tempMatchCount = 		matchCount(printCountingMap, java.util.Arrays.asList(		"after"		,
-		"before"		));
+		tempMatchCount = 		matchCount(printCountingMap, java.util.Arrays.asList(		"event"		));
 		if (tempMatchCount > matches) {
 			alt = 1;
 			matches = tempMatchCount;
 		}
-		tempMatchCount = 		matchCount(printCountingMap, java.util.Arrays.asList(		"before"		));
-		if (tempMatchCount > matches) {
-			alt = 2;
-			matches = tempMatchCount;
+		switch(alt) {
+			case 1:			{
+				java.io.StringWriter sWriter = null;
+				java.io.PrintWriter out1 = null;
+				java.util.Map<String, Integer> printCountingMap1 = null;
+				// DEFINITION PART BEGINS (Containment)
+				count = printCountingMap.get("event");
+				if (count > 0) {
+					Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT));
+					java.util.List<?> list = (java.util.List<?>) o;
+					int index = list.size() - count;
+					if (index >= 0) {
+						o = list.get(index);
+					} else {
+						o = null;
+					}
+					if (o != null) {
+						doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+					}
+					printCountingMap.put("event", count - 1);
+				}
+				// DEFINITION PART BEGINS (CompoundDefinition)
+				sWriter = new java.io.StringWriter();
+				out1 = new java.io.PrintWriter(sWriter);
+				printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+				print_org_kardo_language_ipc_IpcSubExpression_1(element, localtab, out1, printCountingMap1);
+				if (printCountingMap.equals(printCountingMap1)) {
+					out1.close();
+				} else {
+					out1.flush();
+					out1.close();
+					out.print(sWriter.toString());
+					printCountingMap.putAll(printCountingMap1);
+				}
+			}
+			break;
+			default:			java.io.StringWriter sWriter = null;
+			java.io.PrintWriter out1 = null;
+			java.util.Map<String, Integer> printCountingMap1 = null;
+			// DEFINITION PART BEGINS (Containment)
+			count = printCountingMap.get("event");
+			if (count > 0) {
+				Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT));
+				java.util.List<?> list = (java.util.List<?>) o;
+				int index = list.size() - count;
+				if (index >= 0) {
+					o = list.get(index);
+				} else {
+					o = null;
+				}
+				if (o != null) {
+					doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+				}
+				printCountingMap.put("event", count - 1);
+			}
+			// DEFINITION PART BEGINS (CompoundDefinition)
+			sWriter = new java.io.StringWriter();
+			out1 = new java.io.PrintWriter(sWriter);
+			printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+			print_org_kardo_language_ipc_IpcSubExpression_0(element, localtab, out1, printCountingMap1);
+			if (printCountingMap.equals(printCountingMap1)) {
+				out1.close();
+			} else {
+				out1.flush();
+				out1.close();
+				out.print(sWriter.toString());
+				printCountingMap.putAll(printCountingMap1);
+			}
 		}
-		tempMatchCount = 		matchCount(printCountingMap, java.util.Arrays.asList(		"after"		));
+	}
+	
+	public void print_org_kardo_language_ipc_IpcSubExpression_0(org.kardo.language.ipc.IpcSubExpression element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+		String localtab = outertab;
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("||");
+		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("event");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
+			}
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("event", count - 1);
+		}
+	}
+	
+	public void print_org_kardo_language_ipc_IpcSubExpression_1(org.kardo.language.ipc.IpcSubExpression element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+		String localtab = outertab;
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("||");
+		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("event");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
+			}
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("event", count - 1);
+		}
+	}
+	
+	
+	public void print_org_kardo_language_ipc_CompositeInstancePointcut(org.kardo.language.ipc.CompositeInstancePointcut element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
+		// The printCountingMap contains a mapping from feature names to the number of
+		// remaining elements that still need to be printed. The map is initialized with
+		// the number of elements stored in each structural feature. For lists this is the
+		// list size. For non-multiple features it is either 1 (if the feature is set) or
+		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(5);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__LAYOUT_INFORMATIONS));
+		printCountingMap.put("layoutInformations", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__NAME));
+		printCountingMap.put("name", temp == null ? 0 : 1);
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__ASSIGN));
+		printCountingMap.put("assign", temp == null ? 0 : 1);
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__TYPE));
+		printCountingMap.put("type", temp == null ? 0 : 1);
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__COMPEXPR));
+		printCountingMap.put("compexpr", temp == null ? 0 : 1);
+		// print collected hidden tokens
+		int count;
+		java.io.StringWriter sWriter = null;
+		java.io.PrintWriter out1 = null;
+		java.util.Map<String, Integer> printCountingMap1 = null;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("composite instance pointcut");
+		out.print(" ");
+		// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
+		count = printCountingMap.get("name");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__NAME));
+			if (o != null) {
+				org.kardo.language.ipc.resource.ipc.IIpcTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				resolver.setOptions(getOptions());
+				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__NAME), element));
+			}
+			printCountingMap.put("name", count - 1);
+		}
+		// DEFINITION PART BEGINS (WhiteSpaces)
+		// DEFINITION PART BEGINS (CompoundDefinition)
+		sWriter = new java.io.StringWriter();
+		out1 = new java.io.PrintWriter(sWriter);
+		printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+		print_org_kardo_language_ipc_CompositeInstancePointcut_0(element, localtab, out1, printCountingMap1);
+		if (printCountingMap.equals(printCountingMap1)) {
+			out1.close();
+		} else {
+			out1.flush();
+			out1.close();
+			out.print(sWriter.toString());
+			printCountingMap.putAll(printCountingMap1);
+		}
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("assign");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__ASSIGN));
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("assign", count - 1);
+		}
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("compexpr");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__COMPEXPR));
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("compexpr", count - 1);
+		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(";");
+		out.print(" ");
+	}
+	
+	public void print_org_kardo_language_ipc_CompositeInstancePointcut_0(org.kardo.language.ipc.CompositeInstancePointcut element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+		String localtab = outertab;
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("<");
+		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("type");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__TYPE));
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("type", count - 1);
+		}
+		// DEFINITION PART BEGINS (CsString)
+		out.print(">");
+		out.print(" ");
+	}
+	
+	
+	public void print_org_kardo_language_ipc_IpcComposition(org.kardo.language.ipc.IpcComposition element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
+		// The printCountingMap contains a mapping from feature names to the number of
+		// remaining elements that still need to be printed. The map is initialized with
+		// the number of elements stored in each structural feature. For lists this is the
+		// list size. For non-multiple features it is either 1 (if the feature is set) or
+		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_COMPOSITION__CHILD));
+		printCountingMap.put("child", temp == null ? 0 : 1);
+		// print collected hidden tokens
+		int count;
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("child");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_COMPOSITION__CHILD));
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("child", count - 1);
+		}
+	}
+	
+	
+	public void print_org_kardo_language_ipc_IpcUnion(org.kardo.language.ipc.IpcUnion element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
+		// The printCountingMap contains a mapping from feature names to the number of
+		// remaining elements that still need to be printed. The map is initialized with
+		// the number of elements stored in each structural feature. For lists this is the
+		// list size. For non-multiple features it is either 1 (if the feature is set) or
+		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_UNION__CHILDREN));
+		printCountingMap.put("children", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
+		// print collected hidden tokens
+		int count;
+		boolean iterate = true;
+		java.io.StringWriter sWriter = null;
+		java.io.PrintWriter out1 = null;
+		java.util.Map<String, Integer> printCountingMap1 = null;
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("children");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_UNION__CHILDREN));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
+			}
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("children", count - 1);
+		}
+		// DEFINITION PART BEGINS (CompoundDefinition)
+		iterate = true;
+		while (iterate) {
+			sWriter = new java.io.StringWriter();
+			out1 = new java.io.PrintWriter(sWriter);
+			printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+			print_org_kardo_language_ipc_IpcUnion_0(element, localtab, out1, printCountingMap1);
+			if (printCountingMap.equals(printCountingMap1)) {
+				iterate = false;
+				out1.close();
+			} else {
+				out1.flush();
+				out1.close();
+				out.print(sWriter.toString());
+				printCountingMap.putAll(printCountingMap1);
+			}
+		}
+	}
+	
+	public void print_org_kardo_language_ipc_IpcUnion_0(org.kardo.language.ipc.IpcUnion element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+		String localtab = outertab;
+		int count;
+		// DEFINITION PART BEGINS (CsString)
+		out.print("union");
+		out.print(" ");
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("children");
+		if (count > 0) {
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_UNION__CHILDREN));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
+			}
+			if (o != null) {
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("children", count - 1);
+		}
+	}
+	
+	
+	public void print_org_kardo_language_ipc_IpcIntersection(org.kardo.language.ipc.IpcIntersection element, String outertab, java.io.PrintWriter out) {
+		String localtab = outertab;
+		// The printCountingMap contains a mapping from feature names to the number of
+		// remaining elements that still need to be printed. The map is initialized with
+		// the number of elements stored in each structural feature. For lists this is the
+		// list size. For non-multiple features it is either 1 (if the feature is set) or
+		// 0 (if the feature is null).
+		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
+		Object temp;
+		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS));
+		printCountingMap.put("terms", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
+		// print collected hidden tokens
+		int count;
+		int alt = -1;
+		alt = 0;
+		int matches = 		matchCount(printCountingMap, java.util.Arrays.asList(		"terms"		));
+		int tempMatchCount;
+		tempMatchCount = 		matchCount(printCountingMap, java.util.Arrays.asList(		"terms"		));
 		if (tempMatchCount > matches) {
-			alt = 3;
+			alt = 1;
 			matches = tempMatchCount;
 		}
 		switch(alt) {
 			case 1:			{
-				// DEFINITION PART BEGINS (Containment)
-				count = printCountingMap.get("after");
+				boolean iterate = true;
+				java.io.StringWriter sWriter = null;
+				java.io.PrintWriter out1 = null;
+				java.util.Map<String, Integer> printCountingMap1 = null;
+				// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
+				count = printCountingMap.get("terms");
 				if (count > 0) {
-					Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__AFTER));
-					if (o != null) {
-						doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+					Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS));
+					java.util.List<?> list = (java.util.List<?>) o;
+					int index = list.size() - count;
+					if (index >= 0) {
+						o = list.get(index);
+					} else {
+						o = null;
 					}
-					printCountingMap.put("after", count - 1);
+					if (o != null) {
+						org.kardo.language.ipc.resource.ipc.IIpcTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+						resolver.setOptions(getOptions());
+						out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getIpcIntersectionTermsReferenceResolver().deResolve((org.kardo.language.ipc.Ipc) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS)), element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS), element));
+						out.print(" ");
+					}
+					printCountingMap.put("terms", count - 1);
 				}
-				// DEFINITION PART BEGINS (CsString)
-				out.print("||");
-				out.print(" ");
-				// DEFINITION PART BEGINS (Containment)
-				count = printCountingMap.get("before");
-				if (count > 0) {
-					Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__BEFORE));
-					if (o != null) {
-						doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+				// DEFINITION PART BEGINS (CompoundDefinition)
+				iterate = true;
+				while (iterate) {
+					sWriter = new java.io.StringWriter();
+					out1 = new java.io.PrintWriter(sWriter);
+					printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+					print_org_kardo_language_ipc_IpcIntersection_1(element, localtab, out1, printCountingMap1);
+					if (printCountingMap.equals(printCountingMap1)) {
+						iterate = false;
+						out1.close();
+					} else {
+						out1.flush();
+						out1.close();
+						out.print(sWriter.toString());
+						printCountingMap.putAll(printCountingMap1);
 					}
-					printCountingMap.put("before", count - 1);
-				}
-			}
-			break;
-			case 2:			{
-				// DEFINITION PART BEGINS (Containment)
-				count = printCountingMap.get("before");
-				if (count > 0) {
-					Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__BEFORE));
-					if (o != null) {
-						doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
-					}
-					printCountingMap.put("before", count - 1);
-				}
-			}
-			break;
-			case 3:			{
-				// DEFINITION PART BEGINS (Containment)
-				count = printCountingMap.get("after");
-				if (count > 0) {
-					Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__AFTER));
-					if (o != null) {
-						doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
-					}
-					printCountingMap.put("after", count - 1);
 				}
 			}
 			break;
-			default:			// DEFINITION PART BEGINS (Containment)
-			count = printCountingMap.get("before");
+			default:			boolean iterate = true;
+			java.io.StringWriter sWriter = null;
+			java.io.PrintWriter out1 = null;
+			java.util.Map<String, Integer> printCountingMap1 = null;
+			// DEFINITION PART BEGINS (CsString)
+			out.print("(");
+			out.print(" ");
+			// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
+			count = printCountingMap.get("terms");
 			if (count > 0) {
-				Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__BEFORE));
-				if (o != null) {
-					doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+				Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS));
+				java.util.List<?> list = (java.util.List<?>) o;
+				int index = list.size() - count;
+				if (index >= 0) {
+					o = list.get(index);
+				} else {
+					o = null;
 				}
-				printCountingMap.put("before", count - 1);
+				if (o != null) {
+					org.kardo.language.ipc.resource.ipc.IIpcTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+					resolver.setOptions(getOptions());
+					out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getIpcIntersectionTermsReferenceResolver().deResolve((org.kardo.language.ipc.Ipc) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS)), element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS), element));
+					out.print(" ");
+				}
+				printCountingMap.put("terms", count - 1);
+			}
+			// DEFINITION PART BEGINS (CompoundDefinition)
+			print_org_kardo_language_ipc_IpcIntersection_0(element, localtab, out, printCountingMap);
+			iterate = true;
+			while (iterate) {
+				sWriter = new java.io.StringWriter();
+				out1 = new java.io.PrintWriter(sWriter);
+				printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+				print_org_kardo_language_ipc_IpcIntersection_0(element, localtab, out1, printCountingMap1);
+				if (printCountingMap.equals(printCountingMap1)) {
+					iterate = false;
+					out1.close();
+				} else {
+					out1.flush();
+					out1.close();
+					out.print(sWriter.toString());
+					printCountingMap.putAll(printCountingMap1);
+				}
 			}
 			// DEFINITION PART BEGINS (CsString)
-			out.print("||");
+			out.print(")");
 			out.print(" ");
-			// DEFINITION PART BEGINS (Containment)
-			count = printCountingMap.get("after");
-			if (count > 0) {
-				Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__AFTER));
-				if (o != null) {
-					doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
-				}
-				printCountingMap.put("after", count - 1);
-			}
 		}
 	}
 	
-	
-	public void print_org_kardo_language_ipc_AfterEvent(org.kardo.language.ipc.AfterEvent element, String outertab, java.io.PrintWriter out) {
-		String localtab = outertab;
-		// The printCountingMap contains a mapping from feature names to the number of
-		// remaining elements that still need to be printed. The map is initialized with
-		// the number of elements stored in each structural feature. For lists this is the
-		// list size. For non-multiple features it is either 1 (if the feature is set) or
-		// 0 (if the feature is null).
-		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
-		Object temp;
-		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.AFTER_EVENT__PCEXP));
-		printCountingMap.put("pcexp", temp == null ? 0 : 1);
-		// print collected hidden tokens
+	public void print_org_kardo_language_ipc_IpcIntersection_0(org.kardo.language.ipc.IpcIntersection element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
 		int count;
 		// DEFINITION PART BEGINS (CsString)
-		out.print("after");
-		// DEFINITION PART BEGINS (WhiteSpaces)
-		// DEFINITION PART BEGINS (CsString)
-		out.print("(");
+		out.print("inter");
 		out.print(" ");
-		// DEFINITION PART BEGINS (Containment)
-		count = printCountingMap.get("pcexp");
+		// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
+		count = printCountingMap.get("terms");
 		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.AFTER_EVENT__PCEXP));
-			if (o != null) {
-				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
 			}
-			printCountingMap.put("pcexp", count - 1);
+			if (o != null) {
+				org.kardo.language.ipc.resource.ipc.IIpcTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				resolver.setOptions(getOptions());
+				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getIpcIntersectionTermsReferenceResolver().deResolve((org.kardo.language.ipc.Ipc) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS)), element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS), element));
+				out.print(" ");
+			}
+			printCountingMap.put("terms", count - 1);
 		}
-		// DEFINITION PART BEGINS (CsString)
-		out.print(")");
-		out.print(" ");
 	}
 	
-	
-	public void print_org_kardo_language_ipc_BeforeEvent(org.kardo.language.ipc.BeforeEvent element, String outertab, java.io.PrintWriter out) {
-		String localtab = outertab;
-		// The printCountingMap contains a mapping from feature names to the number of
-		// remaining elements that still need to be printed. The map is initialized with
-		// the number of elements stored in each structural feature. For lists this is the
-		// list size. For non-multiple features it is either 1 (if the feature is set) or
-		// 0 (if the feature is null).
-		java.util.Map<String, Integer> printCountingMap = new java.util.LinkedHashMap<String, Integer>(1);
-		Object temp;
-		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.BEFORE_EVENT__PCEXP));
-		printCountingMap.put("pcexp", temp == null ? 0 : 1);
-		// print collected hidden tokens
+	public void print_org_kardo_language_ipc_IpcIntersection_1(org.kardo.language.ipc.IpcIntersection element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
 		int count;
 		// DEFINITION PART BEGINS (CsString)
-		out.print("before");
-		// DEFINITION PART BEGINS (WhiteSpaces)
-		// DEFINITION PART BEGINS (CsString)
-		out.print("(");
+		out.print("inter");
 		out.print(" ");
-		// DEFINITION PART BEGINS (Containment)
-		count = printCountingMap.get("pcexp");
+		// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
+		count = printCountingMap.get("terms");
 		if (count > 0) {
-			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.BEFORE_EVENT__PCEXP));
-			if (o != null) {
-				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS));
+			java.util.List<?> list = (java.util.List<?>) o;
+			int index = list.size() - count;
+			if (index >= 0) {
+				o = list.get(index);
+			} else {
+				o = null;
 			}
-			printCountingMap.put("pcexp", count - 1);
+			if (o != null) {
+				org.kardo.language.ipc.resource.ipc.IIpcTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				resolver.setOptions(getOptions());
+				out.print(resolver.deResolve(getReferenceResolverSwitch() == null ? null : getReferenceResolverSwitch().getIpcIntersectionTermsReferenceResolver().deResolve((org.kardo.language.ipc.Ipc) o, element, (org.eclipse.emf.ecore.EReference) element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS)), element.eClass().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS), element));
+				out.print(" ");
+			}
+			printCountingMap.put("terms", count - 1);
 		}
-		// DEFINITION PART BEGINS (CsString)
-		out.print(")");
-		out.print(" ");
 	}
 	
 	
@@ -1451,7 +1866,7 @@ public class IpcPrinter implements org.kardo.language.ipc.resource.ipc.IIpcTextP
 		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.aspectj.commons.CommonsPackage.ASPECT__PRIVILIGED));
 		printCountingMap.put("priviliged", temp == null ? 0 : 1);
 		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.aspectj.commons.CommonsPackage.ASPECT__EXTEND));
-		printCountingMap.put("extends", temp == null ? 0 : 1);
+		printCountingMap.put("extend", temp == null ? 0 : 1);
 		temp = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.aspectj.commons.CommonsPackage.ASPECT__DEFAULT_EXTENDS));
 		printCountingMap.put("defaultExtends", temp == null ? 0 : 1);
 		// print collected hidden tokens
@@ -1558,13 +1973,13 @@ public class IpcPrinter implements org.kardo.language.ipc.resource.ipc.IIpcTextP
 		out.print("extends");
 		out.print(" ");
 		// DEFINITION PART BEGINS (Containment)
-		count = printCountingMap.get("extends");
+		count = printCountingMap.get("extend");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.aspectj.commons.CommonsPackage.ASPECT__EXTEND));
 			if (o != null) {
 				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
 			}
-			printCountingMap.put("extends", count - 1);
+			printCountingMap.put("extend", count - 1);
 		}
 	}
 	
@@ -2465,12 +2880,14 @@ public class IpcPrinter implements org.kardo.language.ipc.resource.ipc.IIpcTextP
 		// DEFINITION PART BEGINS (CsString)
 		out.print("->");
 		// DEFINITION PART BEGINS (WhiteSpaces)
-		// DEFINITION PART BEGINS (Containment)
+		// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
 		count = printCountingMap.get("methodname");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(org.kardo.language.aspectj.patterns.PatternsPackage.METHOD_PATTERN__METHODNAME));
 			if (o != null) {
-				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+				org.kardo.language.ipc.resource.ipc.IIpcTokenResolver resolver = tokenResolverFactory.createTokenResolver("IDENTIFIER");
+				resolver.setOptions(getOptions());
+				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(org.kardo.language.aspectj.patterns.PatternsPackage.METHOD_PATTERN__METHODNAME), element));
 			}
 			printCountingMap.put("methodname", count - 1);
 		}

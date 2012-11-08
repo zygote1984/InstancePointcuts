@@ -12,7 +12,11 @@ import org.emftext.language.java.commons.NamedElement;
 
 import org.emftext.language.java.members.Member;
 
+import org.emftext.language.java.references.ReferenceableElement;
+
 import org.kardo.language.aspectj.commons.AspectMember;
+
+import org.kardo.language.aspectj.pointcuts.Pointcut;
 
 import org.kardo.language.ipc.*;
 
@@ -79,11 +83,23 @@ public class IpcSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case IpcPackage.IPC:
+      {
+        Ipc ipc = (Ipc)theEObject;
+        T result = caseIpc(ipc);
+        if (result == null) result = caseIpcUnionChild(ipc);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case IpcPackage.INSTANCE_POINTCUT:
       {
         InstancePointcut instancePointcut = (InstancePointcut)theEObject;
         T result = caseInstancePointcut(instancePointcut);
+        if (result == null) result = casePointcut(instancePointcut);
+        if (result == null) result = caseIpc(instancePointcut);
         if (result == null) result = caseAspectMember(instancePointcut);
+        if (result == null) result = caseReferenceableElement(instancePointcut);
+        if (result == null) result = caseIpcUnionChild(instancePointcut);
         if (result == null) result = caseMember(instancePointcut);
         if (result == null) result = caseNamedElement(instancePointcut);
         if (result == null) result = caseCommentable(instancePointcut);
@@ -127,8 +143,76 @@ public class IpcSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case IpcPackage.COMPOSITE_INSTANCE_POINTCUT:
+      {
+        CompositeInstancePointcut compositeInstancePointcut = (CompositeInstancePointcut)theEObject;
+        T result = caseCompositeInstancePointcut(compositeInstancePointcut);
+        if (result == null) result = casePointcut(compositeInstancePointcut);
+        if (result == null) result = caseIpc(compositeInstancePointcut);
+        if (result == null) result = caseAspectMember(compositeInstancePointcut);
+        if (result == null) result = caseReferenceableElement(compositeInstancePointcut);
+        if (result == null) result = caseIpcUnionChild(compositeInstancePointcut);
+        if (result == null) result = caseMember(compositeInstancePointcut);
+        if (result == null) result = caseNamedElement(compositeInstancePointcut);
+        if (result == null) result = caseCommentable(compositeInstancePointcut);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IpcPackage.IPC_COMPOSITION:
+      {
+        IpcComposition ipcComposition = (IpcComposition)theEObject;
+        T result = caseIpcComposition(ipcComposition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IpcPackage.IPC_COMPOSITION_CHILD:
+      {
+        IpcCompositionChild ipcCompositionChild = (IpcCompositionChild)theEObject;
+        T result = caseIpcCompositionChild(ipcCompositionChild);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IpcPackage.IPC_UNION:
+      {
+        IpcUnion ipcUnion = (IpcUnion)theEObject;
+        T result = caseIpcUnion(ipcUnion);
+        if (result == null) result = caseIpcCompositionChild(ipcUnion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IpcPackage.IPC_UNION_CHILD:
+      {
+        IpcUnionChild ipcUnionChild = (IpcUnionChild)theEObject;
+        T result = caseIpcUnionChild(ipcUnionChild);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IpcPackage.IPC_INTERSECTION:
+      {
+        IpcIntersection ipcIntersection = (IpcIntersection)theEObject;
+        T result = caseIpcIntersection(ipcIntersection);
+        if (result == null) result = caseIpcUnionChild(ipcIntersection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ipc</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ipc</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpc(Ipc object)
+  {
+    return null;
   }
 
   /**
@@ -228,6 +312,102 @@ public class IpcSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Composite Instance Pointcut</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Composite Instance Pointcut</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCompositeInstancePointcut(CompositeInstancePointcut object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Composition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Composition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpcComposition(IpcComposition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Composition Child</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Composition Child</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpcCompositionChild(IpcCompositionChild object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Union</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Union</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpcUnion(IpcUnion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Union Child</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Union Child</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpcUnionChild(IpcUnionChild object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Intersection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Intersection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIpcIntersection(IpcIntersection object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Commentable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -287,6 +467,38 @@ public class IpcSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAspectMember(AspectMember object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Referenceable Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Referenceable Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferenceableElement(ReferenceableElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pointcut</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pointcut</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePointcut(Pointcut object)
   {
     return null;
   }

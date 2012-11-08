@@ -69,6 +69,10 @@ public class IpcFactoryImpl extends EFactoryImpl implements IpcFactory
       case IpcPackage.IPC_SUB_EXPRESSION: return createIpcSubExpression();
       case IpcPackage.BEFORE_EVENT: return createBeforeEvent();
       case IpcPackage.AFTER_EVENT: return createAfterEvent();
+      case IpcPackage.COMPOSITE_INSTANCE_POINTCUT: return createCompositeInstancePointcut();
+      case IpcPackage.IPC_COMPOSITION: return createIpcComposition();
+      case IpcPackage.IPC_UNION: return createIpcUnion();
+      case IpcPackage.IPC_INTERSECTION: return createIpcIntersection();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -127,6 +131,50 @@ public class IpcFactoryImpl extends EFactoryImpl implements IpcFactory
   {
     AfterEventImpl afterEvent = new AfterEventImpl();
     return afterEvent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CompositeInstancePointcut createCompositeInstancePointcut()
+  {
+    CompositeInstancePointcutImpl compositeInstancePointcut = new CompositeInstancePointcutImpl();
+    return compositeInstancePointcut;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpcComposition createIpcComposition()
+  {
+    IpcCompositionImpl ipcComposition = new IpcCompositionImpl();
+    return ipcComposition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpcUnion createIpcUnion()
+  {
+    IpcUnionImpl ipcUnion = new IpcUnionImpl();
+    return ipcUnion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IpcIntersection createIpcIntersection()
+  {
+    IpcIntersectionImpl ipcIntersection = new IpcIntersectionImpl();
+    return ipcIntersection;
   }
 
   /**

@@ -2,17 +2,21 @@
  */
 package org.kardo.language.ipc.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.kardo.language.ipc.AfterEvent;
-import org.kardo.language.ipc.BeforeEvent;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.kardo.language.ipc.Event;
 import org.kardo.language.ipc.IpcPackage;
 import org.kardo.language.ipc.IpcSubExpression;
 
@@ -23,8 +27,7 @@ import org.kardo.language.ipc.IpcSubExpression;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.kardo.language.ipc.impl.IpcSubExpressionImpl#getBefore <em>Before</em>}</li>
- *   <li>{@link org.kardo.language.ipc.impl.IpcSubExpressionImpl#getAfter <em>After</em>}</li>
+ *   <li>{@link org.kardo.language.ipc.impl.IpcSubExpressionImpl#getEvent <em>Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,24 +36,14 @@ import org.kardo.language.ipc.IpcSubExpression;
 public class IpcSubExpressionImpl extends EObjectImpl implements IpcSubExpression
 {
   /**
-   * The cached value of the '{@link #getBefore() <em>Before</em>}' containment reference.
+   * The cached value of the '{@link #getEvent() <em>Event</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBefore()
+   * @see #getEvent()
    * @generated
    * @ordered
    */
-  protected BeforeEvent before;
-
-  /**
-   * The cached value of the '{@link #getAfter() <em>After</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAfter()
-   * @generated
-   * @ordered
-   */
-  protected AfterEvent after;
+  protected EList<Event> event;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,95 +71,13 @@ public class IpcSubExpressionImpl extends EObjectImpl implements IpcSubExpressio
    * <!-- end-user-doc -->
    * @generated
    */
-  public BeforeEvent getBefore()
+  public EList<Event> getEvent()
   {
-    return before;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBefore(BeforeEvent newBefore, NotificationChain msgs)
-  {
-    BeforeEvent oldBefore = before;
-    before = newBefore;
-    if (eNotificationRequired())
+    if (event == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, IpcPackage.IPC_SUB_EXPRESSION__BEFORE, oldBefore, newBefore);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      event = new EObjectContainmentEList<Event>(Event.class, this, IpcPackage.IPC_SUB_EXPRESSION__EVENT);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBefore(BeforeEvent newBefore)
-  {
-    if (newBefore != before)
-    {
-      NotificationChain msgs = null;
-      if (before != null)
-        msgs = ((InternalEObject)before).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - IpcPackage.IPC_SUB_EXPRESSION__BEFORE, null, msgs);
-      if (newBefore != null)
-        msgs = ((InternalEObject)newBefore).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - IpcPackage.IPC_SUB_EXPRESSION__BEFORE, null, msgs);
-      msgs = basicSetBefore(newBefore, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IpcPackage.IPC_SUB_EXPRESSION__BEFORE, newBefore, newBefore));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AfterEvent getAfter()
-  {
-    return after;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAfter(AfterEvent newAfter, NotificationChain msgs)
-  {
-    AfterEvent oldAfter = after;
-    after = newAfter;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, IpcPackage.IPC_SUB_EXPRESSION__AFTER, oldAfter, newAfter);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAfter(AfterEvent newAfter)
-  {
-    if (newAfter != after)
-    {
-      NotificationChain msgs = null;
-      if (after != null)
-        msgs = ((InternalEObject)after).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - IpcPackage.IPC_SUB_EXPRESSION__AFTER, null, msgs);
-      if (newAfter != null)
-        msgs = ((InternalEObject)newAfter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - IpcPackage.IPC_SUB_EXPRESSION__AFTER, null, msgs);
-      msgs = basicSetAfter(newAfter, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IpcPackage.IPC_SUB_EXPRESSION__AFTER, newAfter, newAfter));
+    return event;
   }
 
   /**
@@ -179,10 +90,8 @@ public class IpcSubExpressionImpl extends EObjectImpl implements IpcSubExpressio
   {
     switch (featureID)
     {
-      case IpcPackage.IPC_SUB_EXPRESSION__BEFORE:
-        return basicSetBefore(null, msgs);
-      case IpcPackage.IPC_SUB_EXPRESSION__AFTER:
-        return basicSetAfter(null, msgs);
+      case IpcPackage.IPC_SUB_EXPRESSION__EVENT:
+        return ((InternalEList<?>)getEvent()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -197,10 +106,8 @@ public class IpcSubExpressionImpl extends EObjectImpl implements IpcSubExpressio
   {
     switch (featureID)
     {
-      case IpcPackage.IPC_SUB_EXPRESSION__BEFORE:
-        return getBefore();
-      case IpcPackage.IPC_SUB_EXPRESSION__AFTER:
-        return getAfter();
+      case IpcPackage.IPC_SUB_EXPRESSION__EVENT:
+        return getEvent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -210,16 +117,15 @@ public class IpcSubExpressionImpl extends EObjectImpl implements IpcSubExpressio
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case IpcPackage.IPC_SUB_EXPRESSION__BEFORE:
-        setBefore((BeforeEvent)newValue);
-        return;
-      case IpcPackage.IPC_SUB_EXPRESSION__AFTER:
-        setAfter((AfterEvent)newValue);
+      case IpcPackage.IPC_SUB_EXPRESSION__EVENT:
+        getEvent().clear();
+        getEvent().addAll((Collection<? extends Event>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,11 +141,8 @@ public class IpcSubExpressionImpl extends EObjectImpl implements IpcSubExpressio
   {
     switch (featureID)
     {
-      case IpcPackage.IPC_SUB_EXPRESSION__BEFORE:
-        setBefore((BeforeEvent)null);
-        return;
-      case IpcPackage.IPC_SUB_EXPRESSION__AFTER:
-        setAfter((AfterEvent)null);
+      case IpcPackage.IPC_SUB_EXPRESSION__EVENT:
+        getEvent().clear();
         return;
     }
     super.eUnset(featureID);
@@ -255,10 +158,8 @@ public class IpcSubExpressionImpl extends EObjectImpl implements IpcSubExpressio
   {
     switch (featureID)
     {
-      case IpcPackage.IPC_SUB_EXPRESSION__BEFORE:
-        return before != null;
-      case IpcPackage.IPC_SUB_EXPRESSION__AFTER:
-        return after != null;
+      case IpcPackage.IPC_SUB_EXPRESSION__EVENT:
+        return event != null && !event.isEmpty();
     }
     return super.eIsSet(featureID);
   }

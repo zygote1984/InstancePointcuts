@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.kardo.language.aspectj.commons.CommonsPackage;
+import org.kardo.language.aspectj.pointcuts.PointcutsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,6 +59,44 @@ public interface IpcPackage extends EPackage
   IpcPackage eINSTANCE = org.kardo.language.ipc.impl.IpcPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link org.kardo.language.ipc.impl.IpcUnionChildImpl <em>Union Child</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.kardo.language.ipc.impl.IpcUnionChildImpl
+   * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcUnionChild()
+   * @generated
+   */
+  int IPC_UNION_CHILD = 11;
+
+  /**
+   * The number of structural features of the '<em>Union Child</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_UNION_CHILD_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.kardo.language.ipc.impl.IpcImpl <em>Ipc</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.kardo.language.ipc.impl.IpcImpl
+   * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpc()
+   * @generated
+   */
+  int IPC = 0;
+
+  /**
+   * The number of structural features of the '<em>Ipc</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_FEATURE_COUNT = IPC_UNION_CHILD_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.kardo.language.ipc.impl.InstancePointcutImpl <em>Instance Pointcut</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -66,7 +104,7 @@ public interface IpcPackage extends EPackage
    * @see org.kardo.language.ipc.impl.IpcPackageImpl#getInstancePointcut()
    * @generated
    */
-  int INSTANCE_POINTCUT = 0;
+  int INSTANCE_POINTCUT = 1;
 
   /**
    * The feature id for the '<em><b>Layout Informations</b></em>' containment reference list.
@@ -75,7 +113,7 @@ public interface IpcPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_POINTCUT__LAYOUT_INFORMATIONS = CommonsPackage.ASPECT_MEMBER__LAYOUT_INFORMATIONS;
+  int INSTANCE_POINTCUT__LAYOUT_INFORMATIONS = PointcutsPackage.POINTCUT__LAYOUT_INFORMATIONS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -84,7 +122,7 @@ public interface IpcPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_POINTCUT__NAME = CommonsPackage.ASPECT_MEMBER__NAME;
+  int INSTANCE_POINTCUT__NAME = PointcutsPackage.POINTCUT__NAME;
 
   /**
    * The feature id for the '<em><b>Assign</b></em>' containment reference.
@@ -93,7 +131,7 @@ public interface IpcPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_POINTCUT__ASSIGN = CommonsPackage.ASPECT_MEMBER_FEATURE_COUNT + 0;
+  int INSTANCE_POINTCUT__ASSIGN = PointcutsPackage.POINTCUT__ASSIGN;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -102,7 +140,7 @@ public interface IpcPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_POINTCUT__TYPE = CommonsPackage.ASPECT_MEMBER_FEATURE_COUNT + 1;
+  int INSTANCE_POINTCUT__TYPE = PointcutsPackage.POINTCUT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -111,7 +149,7 @@ public interface IpcPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_POINTCUT__EXPR = CommonsPackage.ASPECT_MEMBER_FEATURE_COUNT + 2;
+  int INSTANCE_POINTCUT__EXPR = PointcutsPackage.POINTCUT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Instance Pointcut</em>' class.
@@ -120,7 +158,7 @@ public interface IpcPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_POINTCUT_FEATURE_COUNT = CommonsPackage.ASPECT_MEMBER_FEATURE_COUNT + 3;
+  int INSTANCE_POINTCUT_FEATURE_COUNT = PointcutsPackage.POINTCUT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.kardo.language.ipc.impl.IpcExpressionImpl <em>Expression</em>}' class.
@@ -130,7 +168,7 @@ public interface IpcPackage extends EPackage
    * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcExpression()
    * @generated
    */
-  int IPC_EXPRESSION = 1;
+  int IPC_EXPRESSION = 2;
 
   /**
    * The feature id for the '<em><b>Add Expression</b></em>' containment reference.
@@ -167,25 +205,16 @@ public interface IpcPackage extends EPackage
    * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcSubExpression()
    * @generated
    */
-  int IPC_SUB_EXPRESSION = 2;
+  int IPC_SUB_EXPRESSION = 3;
 
   /**
-   * The feature id for the '<em><b>Before</b></em>' containment reference.
+   * The feature id for the '<em><b>Event</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IPC_SUB_EXPRESSION__BEFORE = 0;
-
-  /**
-   * The feature id for the '<em><b>After</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IPC_SUB_EXPRESSION__AFTER = 1;
+  int IPC_SUB_EXPRESSION__EVENT = 0;
 
   /**
    * The number of structural features of the '<em>Sub Expression</em>' class.
@@ -194,7 +223,7 @@ public interface IpcPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IPC_SUB_EXPRESSION_FEATURE_COUNT = 2;
+  int IPC_SUB_EXPRESSION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.kardo.language.ipc.impl.EventImpl <em>Event</em>}' class.
@@ -204,7 +233,7 @@ public interface IpcPackage extends EPackage
    * @see org.kardo.language.ipc.impl.IpcPackageImpl#getEvent()
    * @generated
    */
-  int EVENT = 3;
+  int EVENT = 4;
 
   /**
    * The feature id for the '<em><b>Pcexp</b></em>' containment reference.
@@ -232,7 +261,7 @@ public interface IpcPackage extends EPackage
    * @see org.kardo.language.ipc.impl.IpcPackageImpl#getBeforeEvent()
    * @generated
    */
-  int BEFORE_EVENT = 4;
+  int BEFORE_EVENT = 5;
 
   /**
    * The feature id for the '<em><b>Pcexp</b></em>' containment reference.
@@ -260,7 +289,7 @@ public interface IpcPackage extends EPackage
    * @see org.kardo.language.ipc.impl.IpcPackageImpl#getAfterEvent()
    * @generated
    */
-  int AFTER_EVENT = 5;
+  int AFTER_EVENT = 6;
 
   /**
    * The feature id for the '<em><b>Pcexp</b></em>' containment reference.
@@ -280,6 +309,183 @@ public interface IpcPackage extends EPackage
    */
   int AFTER_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 0;
 
+  /**
+   * The meta object id for the '{@link org.kardo.language.ipc.impl.CompositeInstancePointcutImpl <em>Composite Instance Pointcut</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.kardo.language.ipc.impl.CompositeInstancePointcutImpl
+   * @see org.kardo.language.ipc.impl.IpcPackageImpl#getCompositeInstancePointcut()
+   * @generated
+   */
+  int COMPOSITE_INSTANCE_POINTCUT = 7;
+
+  /**
+   * The feature id for the '<em><b>Layout Informations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_INSTANCE_POINTCUT__LAYOUT_INFORMATIONS = PointcutsPackage.POINTCUT__LAYOUT_INFORMATIONS;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_INSTANCE_POINTCUT__NAME = PointcutsPackage.POINTCUT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Assign</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_INSTANCE_POINTCUT__ASSIGN = PointcutsPackage.POINTCUT__ASSIGN;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_INSTANCE_POINTCUT__TYPE = PointcutsPackage.POINTCUT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Compexpr</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_INSTANCE_POINTCUT__COMPEXPR = PointcutsPackage.POINTCUT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Composite Instance Pointcut</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_INSTANCE_POINTCUT_FEATURE_COUNT = PointcutsPackage.POINTCUT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.kardo.language.ipc.impl.IpcCompositionImpl <em>Composition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.kardo.language.ipc.impl.IpcCompositionImpl
+   * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcComposition()
+   * @generated
+   */
+  int IPC_COMPOSITION = 8;
+
+  /**
+   * The feature id for the '<em><b>Child</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_COMPOSITION__CHILD = 0;
+
+  /**
+   * The number of structural features of the '<em>Composition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_COMPOSITION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.kardo.language.ipc.impl.IpcCompositionChildImpl <em>Composition Child</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.kardo.language.ipc.impl.IpcCompositionChildImpl
+   * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcCompositionChild()
+   * @generated
+   */
+  int IPC_COMPOSITION_CHILD = 9;
+
+  /**
+   * The number of structural features of the '<em>Composition Child</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_COMPOSITION_CHILD_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.kardo.language.ipc.impl.IpcUnionImpl <em>Union</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.kardo.language.ipc.impl.IpcUnionImpl
+   * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcUnion()
+   * @generated
+   */
+  int IPC_UNION = 10;
+
+  /**
+   * The feature id for the '<em><b>Children</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_UNION__CHILDREN = IPC_COMPOSITION_CHILD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Union</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_UNION_FEATURE_COUNT = IPC_COMPOSITION_CHILD_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.kardo.language.ipc.impl.IpcIntersectionImpl <em>Intersection</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.kardo.language.ipc.impl.IpcIntersectionImpl
+   * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcIntersection()
+   * @generated
+   */
+  int IPC_INTERSECTION = 12;
+
+  /**
+   * The feature id for the '<em><b>Terms</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_INTERSECTION__TERMS = IPC_UNION_CHILD_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Intersection</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IPC_INTERSECTION_FEATURE_COUNT = IPC_UNION_CHILD_FEATURE_COUNT + 1;
+
+
+  /**
+   * Returns the meta object for class '{@link org.kardo.language.ipc.Ipc <em>Ipc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ipc</em>'.
+   * @see org.kardo.language.ipc.Ipc
+   * @generated
+   */
+  EClass getIpc();
 
   /**
    * Returns the meta object for class '{@link org.kardo.language.ipc.InstancePointcut <em>Instance Pointcut</em>}'.
@@ -290,17 +496,6 @@ public interface IpcPackage extends EPackage
    * @generated
    */
   EClass getInstancePointcut();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.kardo.language.ipc.InstancePointcut#getAssign <em>Assign</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Assign</em>'.
-   * @see org.kardo.language.ipc.InstancePointcut#getAssign()
-   * @see #getInstancePointcut()
-   * @generated
-   */
-  EReference getInstancePointcut_Assign();
 
   /**
    * Returns the meta object for the containment reference '{@link org.kardo.language.ipc.InstancePointcut#getType <em>Type</em>}'.
@@ -367,26 +562,15 @@ public interface IpcPackage extends EPackage
   EClass getIpcSubExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.kardo.language.ipc.IpcSubExpression#getBefore <em>Before</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.kardo.language.ipc.IpcSubExpression#getEvent <em>Event</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Before</em>'.
-   * @see org.kardo.language.ipc.IpcSubExpression#getBefore()
+   * @return the meta object for the containment reference list '<em>Event</em>'.
+   * @see org.kardo.language.ipc.IpcSubExpression#getEvent()
    * @see #getIpcSubExpression()
    * @generated
    */
-  EReference getIpcSubExpression_Before();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.kardo.language.ipc.IpcSubExpression#getAfter <em>After</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>After</em>'.
-   * @see org.kardo.language.ipc.IpcSubExpression#getAfter()
-   * @see #getIpcSubExpression()
-   * @generated
-   */
-  EReference getIpcSubExpression_After();
+  EReference getIpcSubExpression_Event();
 
   /**
    * Returns the meta object for class '{@link org.kardo.language.ipc.Event <em>Event</em>}'.
@@ -430,6 +614,121 @@ public interface IpcPackage extends EPackage
   EClass getAfterEvent();
 
   /**
+   * Returns the meta object for class '{@link org.kardo.language.ipc.CompositeInstancePointcut <em>Composite Instance Pointcut</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Composite Instance Pointcut</em>'.
+   * @see org.kardo.language.ipc.CompositeInstancePointcut
+   * @generated
+   */
+  EClass getCompositeInstancePointcut();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.kardo.language.ipc.CompositeInstancePointcut#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see org.kardo.language.ipc.CompositeInstancePointcut#getType()
+   * @see #getCompositeInstancePointcut()
+   * @generated
+   */
+  EReference getCompositeInstancePointcut_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.kardo.language.ipc.CompositeInstancePointcut#getCompexpr <em>Compexpr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Compexpr</em>'.
+   * @see org.kardo.language.ipc.CompositeInstancePointcut#getCompexpr()
+   * @see #getCompositeInstancePointcut()
+   * @generated
+   */
+  EReference getCompositeInstancePointcut_Compexpr();
+
+  /**
+   * Returns the meta object for class '{@link org.kardo.language.ipc.IpcComposition <em>Composition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Composition</em>'.
+   * @see org.kardo.language.ipc.IpcComposition
+   * @generated
+   */
+  EClass getIpcComposition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.kardo.language.ipc.IpcComposition#getChild <em>Child</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Child</em>'.
+   * @see org.kardo.language.ipc.IpcComposition#getChild()
+   * @see #getIpcComposition()
+   * @generated
+   */
+  EReference getIpcComposition_Child();
+
+  /**
+   * Returns the meta object for class '{@link org.kardo.language.ipc.IpcCompositionChild <em>Composition Child</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Composition Child</em>'.
+   * @see org.kardo.language.ipc.IpcCompositionChild
+   * @generated
+   */
+  EClass getIpcCompositionChild();
+
+  /**
+   * Returns the meta object for class '{@link org.kardo.language.ipc.IpcUnion <em>Union</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Union</em>'.
+   * @see org.kardo.language.ipc.IpcUnion
+   * @generated
+   */
+  EClass getIpcUnion();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.kardo.language.ipc.IpcUnion#getChildren <em>Children</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Children</em>'.
+   * @see org.kardo.language.ipc.IpcUnion#getChildren()
+   * @see #getIpcUnion()
+   * @generated
+   */
+  EReference getIpcUnion_Children();
+
+  /**
+   * Returns the meta object for class '{@link org.kardo.language.ipc.IpcUnionChild <em>Union Child</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Union Child</em>'.
+   * @see org.kardo.language.ipc.IpcUnionChild
+   * @generated
+   */
+  EClass getIpcUnionChild();
+
+  /**
+   * Returns the meta object for class '{@link org.kardo.language.ipc.IpcIntersection <em>Intersection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Intersection</em>'.
+   * @see org.kardo.language.ipc.IpcIntersection
+   * @generated
+   */
+  EClass getIpcIntersection();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.kardo.language.ipc.IpcIntersection#getTerms <em>Terms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Terms</em>'.
+   * @see org.kardo.language.ipc.IpcIntersection#getTerms()
+   * @see #getIpcIntersection()
+   * @generated
+   */
+  EReference getIpcIntersection_Terms();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -453,6 +752,16 @@ public interface IpcPackage extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link org.kardo.language.ipc.impl.IpcImpl <em>Ipc</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.kardo.language.ipc.impl.IpcImpl
+     * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpc()
+     * @generated
+     */
+    EClass IPC = eINSTANCE.getIpc();
+
+    /**
      * The meta object literal for the '{@link org.kardo.language.ipc.impl.InstancePointcutImpl <em>Instance Pointcut</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -461,14 +770,6 @@ public interface IpcPackage extends EPackage
      * @generated
      */
     EClass INSTANCE_POINTCUT = eINSTANCE.getInstancePointcut();
-
-    /**
-     * The meta object literal for the '<em><b>Assign</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INSTANCE_POINTCUT__ASSIGN = eINSTANCE.getInstancePointcut_Assign();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -523,20 +824,12 @@ public interface IpcPackage extends EPackage
     EClass IPC_SUB_EXPRESSION = eINSTANCE.getIpcSubExpression();
 
     /**
-     * The meta object literal for the '<em><b>Before</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Event</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference IPC_SUB_EXPRESSION__BEFORE = eINSTANCE.getIpcSubExpression_Before();
-
-    /**
-     * The meta object literal for the '<em><b>After</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IPC_SUB_EXPRESSION__AFTER = eINSTANCE.getIpcSubExpression_After();
+    EReference IPC_SUB_EXPRESSION__EVENT = eINSTANCE.getIpcSubExpression_Event();
 
     /**
      * The meta object literal for the '{@link org.kardo.language.ipc.impl.EventImpl <em>Event</em>}' class.
@@ -575,6 +868,106 @@ public interface IpcPackage extends EPackage
      * @generated
      */
     EClass AFTER_EVENT = eINSTANCE.getAfterEvent();
+
+    /**
+     * The meta object literal for the '{@link org.kardo.language.ipc.impl.CompositeInstancePointcutImpl <em>Composite Instance Pointcut</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.kardo.language.ipc.impl.CompositeInstancePointcutImpl
+     * @see org.kardo.language.ipc.impl.IpcPackageImpl#getCompositeInstancePointcut()
+     * @generated
+     */
+    EClass COMPOSITE_INSTANCE_POINTCUT = eINSTANCE.getCompositeInstancePointcut();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITE_INSTANCE_POINTCUT__TYPE = eINSTANCE.getCompositeInstancePointcut_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Compexpr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITE_INSTANCE_POINTCUT__COMPEXPR = eINSTANCE.getCompositeInstancePointcut_Compexpr();
+
+    /**
+     * The meta object literal for the '{@link org.kardo.language.ipc.impl.IpcCompositionImpl <em>Composition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.kardo.language.ipc.impl.IpcCompositionImpl
+     * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcComposition()
+     * @generated
+     */
+    EClass IPC_COMPOSITION = eINSTANCE.getIpcComposition();
+
+    /**
+     * The meta object literal for the '<em><b>Child</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IPC_COMPOSITION__CHILD = eINSTANCE.getIpcComposition_Child();
+
+    /**
+     * The meta object literal for the '{@link org.kardo.language.ipc.impl.IpcCompositionChildImpl <em>Composition Child</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.kardo.language.ipc.impl.IpcCompositionChildImpl
+     * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcCompositionChild()
+     * @generated
+     */
+    EClass IPC_COMPOSITION_CHILD = eINSTANCE.getIpcCompositionChild();
+
+    /**
+     * The meta object literal for the '{@link org.kardo.language.ipc.impl.IpcUnionImpl <em>Union</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.kardo.language.ipc.impl.IpcUnionImpl
+     * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcUnion()
+     * @generated
+     */
+    EClass IPC_UNION = eINSTANCE.getIpcUnion();
+
+    /**
+     * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IPC_UNION__CHILDREN = eINSTANCE.getIpcUnion_Children();
+
+    /**
+     * The meta object literal for the '{@link org.kardo.language.ipc.impl.IpcUnionChildImpl <em>Union Child</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.kardo.language.ipc.impl.IpcUnionChildImpl
+     * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcUnionChild()
+     * @generated
+     */
+    EClass IPC_UNION_CHILD = eINSTANCE.getIpcUnionChild();
+
+    /**
+     * The meta object literal for the '{@link org.kardo.language.ipc.impl.IpcIntersectionImpl <em>Intersection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.kardo.language.ipc.impl.IpcIntersectionImpl
+     * @see org.kardo.language.ipc.impl.IpcPackageImpl#getIpcIntersection()
+     * @generated
+     */
+    EClass IPC_INTERSECTION = eINSTANCE.getIpcIntersection();
+
+    /**
+     * The meta object literal for the '<em><b>Terms</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IPC_INTERSECTION__TERMS = eINSTANCE.getIpcIntersection_Terms();
 
   }
 

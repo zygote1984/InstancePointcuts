@@ -22,12 +22,19 @@ import org.kardo.language.aspectj.pointcuts.PointcutsPackage;
 
 import org.kardo.language.ipc.AfterEvent;
 import org.kardo.language.ipc.BeforeEvent;
+import org.kardo.language.ipc.CompositeInstancePointcut;
 import org.kardo.language.ipc.Event;
 import org.kardo.language.ipc.InstancePointcut;
+import org.kardo.language.ipc.Ipc;
+import org.kardo.language.ipc.IpcComposition;
+import org.kardo.language.ipc.IpcCompositionChild;
 import org.kardo.language.ipc.IpcExpression;
 import org.kardo.language.ipc.IpcFactory;
+import org.kardo.language.ipc.IpcIntersection;
 import org.kardo.language.ipc.IpcPackage;
 import org.kardo.language.ipc.IpcSubExpression;
+import org.kardo.language.ipc.IpcUnion;
+import org.kardo.language.ipc.IpcUnionChild;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,6 +44,13 @@ import org.kardo.language.ipc.IpcSubExpression;
  */
 public class IpcPackageImpl extends EPackageImpl implements IpcPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipcEClass = null;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -78,6 +92,48 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
    * @generated
    */
   private EClass afterEventEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass compositeInstancePointcutEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipcCompositionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipcCompositionChildEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipcUnionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipcUnionChildEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ipcIntersectionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -154,6 +210,16 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getIpc()
+  {
+    return ipcEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getInstancePointcut()
   {
     return instancePointcutEClass;
@@ -164,7 +230,7 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInstancePointcut_Assign()
+  public EReference getInstancePointcut_Type()
   {
     return (EReference)instancePointcutEClass.getEStructuralFeatures().get(0);
   }
@@ -174,19 +240,9 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInstancePointcut_Type()
-  {
-    return (EReference)instancePointcutEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getInstancePointcut_Expr()
   {
-    return (EReference)instancePointcutEClass.getEStructuralFeatures().get(2);
+    return (EReference)instancePointcutEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -234,19 +290,9 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getIpcSubExpression_Before()
+  public EReference getIpcSubExpression_Event()
   {
     return (EReference)ipcSubExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getIpcSubExpression_After()
-  {
-    return (EReference)ipcSubExpressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -294,6 +340,116 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCompositeInstancePointcut()
+  {
+    return compositeInstancePointcutEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCompositeInstancePointcut_Type()
+  {
+    return (EReference)compositeInstancePointcutEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCompositeInstancePointcut_Compexpr()
+  {
+    return (EReference)compositeInstancePointcutEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpcComposition()
+  {
+    return ipcCompositionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpcComposition_Child()
+  {
+    return (EReference)ipcCompositionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpcCompositionChild()
+  {
+    return ipcCompositionChildEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpcUnion()
+  {
+    return ipcUnionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpcUnion_Children()
+  {
+    return (EReference)ipcUnionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpcUnionChild()
+  {
+    return ipcUnionChildEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIpcIntersection()
+  {
+    return ipcIntersectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getIpcIntersection_Terms()
+  {
+    return (EReference)ipcIntersectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IpcFactory getIpcFactory()
   {
     return (IpcFactory)getEFactoryInstance();
@@ -319,8 +475,9 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
     isCreated = true;
 
     // Create classes and their features
+    ipcEClass = createEClass(IPC);
+
     instancePointcutEClass = createEClass(INSTANCE_POINTCUT);
-    createEReference(instancePointcutEClass, INSTANCE_POINTCUT__ASSIGN);
     createEReference(instancePointcutEClass, INSTANCE_POINTCUT__TYPE);
     createEReference(instancePointcutEClass, INSTANCE_POINTCUT__EXPR);
 
@@ -329,8 +486,7 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
     createEReference(ipcExpressionEClass, IPC_EXPRESSION__REMOVE_EXPRESSION);
 
     ipcSubExpressionEClass = createEClass(IPC_SUB_EXPRESSION);
-    createEReference(ipcSubExpressionEClass, IPC_SUB_EXPRESSION__BEFORE);
-    createEReference(ipcSubExpressionEClass, IPC_SUB_EXPRESSION__AFTER);
+    createEReference(ipcSubExpressionEClass, IPC_SUB_EXPRESSION__EVENT);
 
     eventEClass = createEClass(EVENT);
     createEReference(eventEClass, EVENT__PCEXP);
@@ -338,6 +494,23 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
     beforeEventEClass = createEClass(BEFORE_EVENT);
 
     afterEventEClass = createEClass(AFTER_EVENT);
+
+    compositeInstancePointcutEClass = createEClass(COMPOSITE_INSTANCE_POINTCUT);
+    createEReference(compositeInstancePointcutEClass, COMPOSITE_INSTANCE_POINTCUT__TYPE);
+    createEReference(compositeInstancePointcutEClass, COMPOSITE_INSTANCE_POINTCUT__COMPEXPR);
+
+    ipcCompositionEClass = createEClass(IPC_COMPOSITION);
+    createEReference(ipcCompositionEClass, IPC_COMPOSITION__CHILD);
+
+    ipcCompositionChildEClass = createEClass(IPC_COMPOSITION_CHILD);
+
+    ipcUnionEClass = createEClass(IPC_UNION);
+    createEReference(ipcUnionEClass, IPC_UNION__CHILDREN);
+
+    ipcUnionChildEClass = createEClass(IPC_UNION_CHILD);
+
+    ipcIntersectionEClass = createEClass(IPC_INTERSECTION);
+    createEReference(ipcIntersectionEClass, IPC_INTERSECTION__TERMS);
   }
 
   /**
@@ -365,22 +538,29 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    CommonsPackage theCommonsPackage = (CommonsPackage)EPackage.Registry.INSTANCE.getEPackage(CommonsPackage.eNS_URI);
-    PcexpPackage thePcexpPackage = (PcexpPackage)EPackage.Registry.INSTANCE.getEPackage(PcexpPackage.eNS_URI);
+    PointcutsPackage thePointcutsPackage = (PointcutsPackage)EPackage.Registry.INSTANCE.getEPackage(PointcutsPackage.eNS_URI);
     TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+    PcexpPackage thePcexpPackage = (PcexpPackage)EPackage.Registry.INSTANCE.getEPackage(PcexpPackage.eNS_URI);
 
     // Create type parameters
 
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    instancePointcutEClass.getESuperTypes().add(theCommonsPackage.getAspectMember());
+    ipcEClass.getESuperTypes().add(this.getIpcUnionChild());
+    instancePointcutEClass.getESuperTypes().add(thePointcutsPackage.getPointcut());
+    instancePointcutEClass.getESuperTypes().add(this.getIpc());
     beforeEventEClass.getESuperTypes().add(this.getEvent());
     afterEventEClass.getESuperTypes().add(this.getEvent());
+    compositeInstancePointcutEClass.getESuperTypes().add(thePointcutsPackage.getPointcut());
+    compositeInstancePointcutEClass.getESuperTypes().add(this.getIpc());
+    ipcUnionEClass.getESuperTypes().add(this.getIpcCompositionChild());
+    ipcIntersectionEClass.getESuperTypes().add(this.getIpcUnionChild());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(ipcEClass, Ipc.class, "Ipc", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(instancePointcutEClass, InstancePointcut.class, "InstancePointcut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInstancePointcut_Assign(), thePcexpPackage.getPcAssignmentOperator(), null, "assign", null, 1, 1, InstancePointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInstancePointcut_Type(), theTypesPackage.getTypeReference(), null, "type", null, 1, 1, InstancePointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInstancePointcut_Expr(), this.getIpcExpression(), null, "expr", null, 1, 1, InstancePointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -389,8 +569,7 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
     initEReference(getIpcExpression_RemoveExpression(), this.getIpcSubExpression(), null, "removeExpression", null, 0, 1, IpcExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ipcSubExpressionEClass, IpcSubExpression.class, "IpcSubExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIpcSubExpression_Before(), this.getBeforeEvent(), null, "before", null, 0, 1, IpcSubExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIpcSubExpression_After(), this.getAfterEvent(), null, "after", null, 0, 1, IpcSubExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIpcSubExpression_Event(), this.getEvent(), null, "event", null, 1, 2, IpcSubExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEvent_Pcexp(), thePcexpPackage.getPointcutExpression(), null, "pcexp", null, 1, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -398,6 +577,23 @@ public class IpcPackageImpl extends EPackageImpl implements IpcPackage
     initEClass(beforeEventEClass, BeforeEvent.class, "BeforeEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(afterEventEClass, AfterEvent.class, "AfterEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(compositeInstancePointcutEClass, CompositeInstancePointcut.class, "CompositeInstancePointcut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCompositeInstancePointcut_Type(), theTypesPackage.getTypeReference(), null, "type", null, 0, 1, CompositeInstancePointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompositeInstancePointcut_Compexpr(), this.getIpcComposition(), null, "compexpr", null, 1, 1, CompositeInstancePointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ipcCompositionEClass, IpcComposition.class, "IpcComposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIpcComposition_Child(), this.getIpcCompositionChild(), null, "child", null, 1, 1, IpcComposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ipcCompositionChildEClass, IpcCompositionChild.class, "IpcCompositionChild", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(ipcUnionEClass, IpcUnion.class, "IpcUnion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIpcUnion_Children(), this.getIpcUnionChild(), null, "children", null, 0, -1, IpcUnion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ipcUnionChildEClass, IpcUnionChild.class, "IpcUnionChild", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(ipcIntersectionEClass, IpcIntersection.class, "IpcIntersection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIpcIntersection_Terms(), this.getIpc(), null, "terms", null, 1, -1, IpcIntersection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -192,24 +192,40 @@ public class IpcPrinter2 implements org.kardo.language.ipc.resource.ipc.IIpcText
 			throw new java.lang.IllegalArgumentException("Nothing to write on.");
 		}
 		
-		if (element instanceof org.kardo.language.ipc.InstancePointcut) {
+		if (element instanceof org.kardo.language.ipc.AfterEvent) {
 			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_0, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.kardo.language.ipc.IpcExpression) {
+		if (element instanceof org.kardo.language.ipc.BeforeEvent) {
 			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_1, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.kardo.language.ipc.IpcSubExpression) {
+		if (element instanceof org.kardo.language.ipc.InstancePointcut) {
 			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_2, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.kardo.language.ipc.AfterEvent) {
+		if (element instanceof org.kardo.language.ipc.IpcExpression) {
 			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_3, foundFormattingElements);
 			return;
 		}
-		if (element instanceof org.kardo.language.ipc.BeforeEvent) {
+		if (element instanceof org.kardo.language.ipc.IpcSubExpression) {
 			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_4, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.kardo.language.ipc.CompositeInstancePointcut) {
+			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_5, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.kardo.language.ipc.IpcComposition) {
+			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_6, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.kardo.language.ipc.IpcUnion) {
+			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_7, foundFormattingElements);
+			return;
+		}
+		if (element instanceof org.kardo.language.ipc.IpcIntersection) {
+			printInternal(element, org.kardo.language.ipc.resource.ipc.grammar.IpcGrammarInformationProvider.IPC_8, foundFormattingElements);
 			return;
 		}
 		if (element instanceof org.kardo.language.aspectj.commons.AspectJCompilationUnit) {

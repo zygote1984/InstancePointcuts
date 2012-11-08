@@ -19,43 +19,27 @@ public class IpcGrammarInformationProvider {
 	
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_0_0_0_0 = INSTANCE.getIPC_0_0_0_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_0_0_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("instance pointcut", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("afterevent", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder IPC_0_0_0_1 = INSTANCE.getIPC_0_0_0_1();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder getIPC_0_0_0_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.INSTANCE_POINTCUT__NAME), "IDENTIFIER", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, 0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace IPC_0_0_0_2 = INSTANCE.getIPC_0_0_0_2();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getIPC_0_0_0_2() {
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace IPC_0_0_0_1 = INSTANCE.getIPC_0_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getIPC_0_0_0_1() {
 		return new org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace(0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_0_0_0_3 = INSTANCE.getIPC_0_0_0_3();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_0_0_0_3() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("<", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_0_0_0_2 = INSTANCE.getIPC_0_0_0_2();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_0_0_0_2() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("(", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_0_0_0_4 = INSTANCE.getIPC_0_0_0_4();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_0_0_0_4() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.INSTANCE_POINTCUT__TYPE), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.emftext.language.java.types.TypesPackage.eINSTANCE.getTypeReference(), }, 0);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_0_0_0_3 = INSTANCE.getIPC_0_0_0_3();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_0_0_0_3() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.AFTER_EVENT__PCEXP), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.aspectj.pcexp.PcexpPackage.eINSTANCE.getPointcutExpression(), }, 0);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_0_0_0_5 = INSTANCE.getIPC_0_0_0_5();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_0_0_0_5() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(">", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_0_0_0_6 = INSTANCE.getIPC_0_0_0_6();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_0_0_0_6() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.INSTANCE_POINTCUT__ASSIGN), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.aspectj.pcexp.PcexpPackage.eINSTANCE.getPcAssignmentOperator(), }, 0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_0_0_0_7 = INSTANCE.getIPC_0_0_0_7();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_0_0_0_7() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.INSTANCE_POINTCUT__EXPR), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression(), }, 0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_0_0_0_8 = INSTANCE.getIPC_0_0_0_8();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_0_0_0_8() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(";", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_0_0_0_4 = INSTANCE.getIPC_0_0_0_4();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_0_0_0_4() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(")", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_0_0_0 = INSTANCE.getIPC_0_0_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_0_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_0_0_0_0, IPC_0_0_0_1, IPC_0_0_0_2, IPC_0_0_0_3, IPC_0_0_0_4, IPC_0_0_0_5, IPC_0_0_0_6, IPC_0_0_0_7, IPC_0_0_0_8);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_0_0_0_0, IPC_0_0_0_1, IPC_0_0_0_2, IPC_0_0_0_3, IPC_0_0_0_4);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_0_0 = INSTANCE.getIPC_0_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_0_0() {
@@ -63,35 +47,31 @@ public class IpcGrammarInformationProvider {
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_0 = INSTANCE.getIPC_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut(), IPC_0_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(), IPC_0_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_1_0_0_0 = INSTANCE.getIPC_1_0_0_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_1_0_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_EXPRESSION__ADD_EXPRESSION), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression(), }, 0);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_1_0_0_0 = INSTANCE.getIPC_1_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_1_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("beforeevent", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_1_0_0_1_0_0_0 = INSTANCE.getIPC_1_0_0_1_0_0_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_1_0_0_1_0_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("UNTIL", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace IPC_1_0_0_1 = INSTANCE.getIPC_1_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getIPC_1_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace(0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_1_0_0_1_0_0_1 = INSTANCE.getIPC_1_0_0_1_0_0_1();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_1_0_0_1_0_0_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_EXPRESSION__REMOVE_EXPRESSION), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression(), }, 0);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_1_0_0_2 = INSTANCE.getIPC_1_0_0_2();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_1_0_0_2() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("(", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_1_0_0_1_0_0 = INSTANCE.getIPC_1_0_0_1_0_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_1_0_0_1_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_1_0_0_1_0_0_0, IPC_1_0_0_1_0_0_1);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_1_0_0_3 = INSTANCE.getIPC_1_0_0_3();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_1_0_0_3() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.BEFORE_EVENT__PCEXP), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.aspectj.pcexp.PcexpPackage.eINSTANCE.getPointcutExpression(), }, 0);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_1_0_0_1_0 = INSTANCE.getIPC_1_0_0_1_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_1_0_0_1_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_1_0_0_1_0_0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcCompound IPC_1_0_0_1 = INSTANCE.getIPC_1_0_0_1();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcCompound getIPC_1_0_0_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcCompound(IPC_1_0_0_1_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.QUESTIONMARK);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_1_0_0_4 = INSTANCE.getIPC_1_0_0_4();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_1_0_0_4() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(")", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_1_0_0 = INSTANCE.getIPC_1_0_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_1_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_1_0_0_0, IPC_1_0_0_1);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_1_0_0_0, IPC_1_0_0_1, IPC_1_0_0_2, IPC_1_0_0_3, IPC_1_0_0_4);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_1_0 = INSTANCE.getIPC_1_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_1_0() {
@@ -99,87 +79,83 @@ public class IpcGrammarInformationProvider {
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_1 = INSTANCE.getIPC_1();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression(), IPC_1_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(), IPC_1_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_0_0 = INSTANCE.getIPC_2_0_0_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__BEFORE), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(), }, 0);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_2_0_0_0 = INSTANCE.getIPC_2_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_2_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("instance pointcut", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_2_0_0_1 = INSTANCE.getIPC_2_0_0_1();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_2_0_0_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("||", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder IPC_2_0_0_1 = INSTANCE.getIPC_2_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder getIPC_2_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.INSTANCE_POINTCUT__NAME), "IDENTIFIER", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, 0);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_0_2 = INSTANCE.getIPC_2_0_0_2();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_0_2() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__AFTER), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(), }, 0);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace IPC_2_0_0_2 = INSTANCE.getIPC_2_0_0_2();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getIPC_2_0_0_2() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace(0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_2_0_0_3 = INSTANCE.getIPC_2_0_0_3();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_2_0_0_3() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("<", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_0_4 = INSTANCE.getIPC_2_0_0_4();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_0_4() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.INSTANCE_POINTCUT__TYPE), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.emftext.language.java.types.TypesPackage.eINSTANCE.getTypeReference(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_2_0_0_5 = INSTANCE.getIPC_2_0_0_5();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_2_0_0_5() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(">", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_0_6 = INSTANCE.getIPC_2_0_0_6();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_0_6() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.INSTANCE_POINTCUT__ASSIGN), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.emftext.language.java.operators.OperatorsPackage.eINSTANCE.getAssignmentOperator(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_0_7 = INSTANCE.getIPC_2_0_0_7();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_0_7() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.INSTANCE_POINTCUT__EXPR), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_2_0_0_8 = INSTANCE.getIPC_2_0_0_8();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_2_0_0_8() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(";", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_2_0_0 = INSTANCE.getIPC_2_0_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_2_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_2_0_0_0, IPC_2_0_0_1, IPC_2_0_0_2);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_1_0 = INSTANCE.getIPC_2_0_1_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_1_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__AFTER), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(), }, 0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_2_0_1_1 = INSTANCE.getIPC_2_0_1_1();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_2_0_1_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("||", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_1_2 = INSTANCE.getIPC_2_0_1_2();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_1_2() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__BEFORE), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(), }, 0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_2_0_1 = INSTANCE.getIPC_2_0_1();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_2_0_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_2_0_1_0, IPC_2_0_1_1, IPC_2_0_1_2);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_2_0 = INSTANCE.getIPC_2_0_2_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_2_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__BEFORE), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(), }, 0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_2_0_2 = INSTANCE.getIPC_2_0_2();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_2_0_2() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_2_0_2_0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_2_0_3_0 = INSTANCE.getIPC_2_0_3_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_2_0_3_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__AFTER), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(), }, 0);
-	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_2_0_3 = INSTANCE.getIPC_2_0_3();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_2_0_3() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_2_0_3_0);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_2_0_0_0, IPC_2_0_0_1, IPC_2_0_0_2, IPC_2_0_0_3, IPC_2_0_0_4, IPC_2_0_0_5, IPC_2_0_0_6, IPC_2_0_0_7, IPC_2_0_0_8);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_2_0 = INSTANCE.getIPC_2_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_2_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_2_0_0, IPC_2_0_1, IPC_2_0_2, IPC_2_0_3);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_2_0_0);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_2 = INSTANCE.getIPC_2();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_2() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression(), IPC_2_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut(), IPC_2_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_3_0_0_0 = INSTANCE.getIPC_3_0_0_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_3_0_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("after", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_3_0_0_0 = INSTANCE.getIPC_3_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_3_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_EXPRESSION__ADD_EXPRESSION), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression(), }, 0);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace IPC_3_0_0_1 = INSTANCE.getIPC_3_0_0_1();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getIPC_3_0_0_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace(0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_3_0_0_1_0_0_0 = INSTANCE.getIPC_3_0_0_1_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_3_0_0_1_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("UNTIL", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_3_0_0_2 = INSTANCE.getIPC_3_0_0_2();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_3_0_0_2() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("(", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_3_0_0_1_0_0_1 = INSTANCE.getIPC_3_0_0_1_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_3_0_0_1_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_EXPRESSION__REMOVE_EXPRESSION), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression(), }, 0);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_3_0_0_3 = INSTANCE.getIPC_3_0_0_3();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_3_0_0_3() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.AFTER_EVENT__PCEXP), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.aspectj.pcexp.PcexpPackage.eINSTANCE.getPointcutExpression(), }, 0);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_3_0_0_1_0_0 = INSTANCE.getIPC_3_0_0_1_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_3_0_0_1_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_3_0_0_1_0_0_0, IPC_3_0_0_1_0_0_1);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_3_0_0_4 = INSTANCE.getIPC_3_0_0_4();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_3_0_0_4() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(")", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_3_0_0_1_0 = INSTANCE.getIPC_3_0_0_1_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_3_0_0_1_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_3_0_0_1_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcCompound IPC_3_0_0_1 = INSTANCE.getIPC_3_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcCompound getIPC_3_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcCompound(IPC_3_0_0_1_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.QUESTIONMARK);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_3_0_0 = INSTANCE.getIPC_3_0_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_3_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_3_0_0_0, IPC_3_0_0_1, IPC_3_0_0_2, IPC_3_0_0_3, IPC_3_0_0_4);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_3_0_0_0, IPC_3_0_0_1);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_3_0 = INSTANCE.getIPC_3_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_3_0() {
@@ -187,39 +163,255 @@ public class IpcGrammarInformationProvider {
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_3 = INSTANCE.getIPC_3();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_3() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(), IPC_3_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression(), IPC_3_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_4_0_0_0 = INSTANCE.getIPC_4_0_0_0();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_4_0_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("before", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_4_0_0_0 = INSTANCE.getIPC_4_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_4_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(), }, 0);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace IPC_4_0_0_1 = INSTANCE.getIPC_4_0_0_1();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getIPC_4_0_0_1() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace(0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_4_0_0_1_0_0_0 = INSTANCE.getIPC_4_0_0_1_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_4_0_0_1_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("||", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_4_0_0_2 = INSTANCE.getIPC_4_0_0_2();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_4_0_0_2() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("(", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_4_0_0_1_0_0_1 = INSTANCE.getIPC_4_0_0_1_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_4_0_0_1_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(), }, 0);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_4_0_0_3 = INSTANCE.getIPC_4_0_0_3();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_4_0_0_3() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.BEFORE_EVENT__PCEXP), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.aspectj.pcexp.PcexpPackage.eINSTANCE.getPointcutExpression(), }, 0);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_4_0_0_1_0_0 = INSTANCE.getIPC_4_0_0_1_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_4_0_0_1_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_0_1_0_0_0, IPC_4_0_0_1_0_0_1);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_4_0_0_4 = INSTANCE.getIPC_4_0_0_4();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_4_0_0_4() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(")", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_4_0_0_1_0 = INSTANCE.getIPC_4_0_0_1_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_4_0_0_1_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_0_1_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcCompound IPC_4_0_0_1 = INSTANCE.getIPC_4_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcCompound getIPC_4_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcCompound(IPC_4_0_0_1_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.QUESTIONMARK);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_4_0_0 = INSTANCE.getIPC_4_0_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_4_0_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_0_0, IPC_4_0_0_1, IPC_4_0_0_2, IPC_4_0_0_3, IPC_4_0_0_4);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_0_0, IPC_4_0_0_1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_4_0_1_0 = INSTANCE.getIPC_4_0_1_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_4_0_1_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_4_0_1_1_0_0_0 = INSTANCE.getIPC_4_0_1_1_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_4_0_1_1_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("||", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_4_0_1_1_0_0_1 = INSTANCE.getIPC_4_0_1_1_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_4_0_1_1_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_SUB_EXPRESSION__EVENT), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_4_0_1_1_0_0 = INSTANCE.getIPC_4_0_1_1_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_4_0_1_1_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_1_1_0_0_0, IPC_4_0_1_1_0_0_1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_4_0_1_1_0 = INSTANCE.getIPC_4_0_1_1_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_4_0_1_1_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_1_1_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcCompound IPC_4_0_1_1 = INSTANCE.getIPC_4_0_1_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcCompound getIPC_4_0_1_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcCompound(IPC_4_0_1_1_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.QUESTIONMARK);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_4_0_1 = INSTANCE.getIPC_4_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_4_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_1_0, IPC_4_0_1_1);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_4_0 = INSTANCE.getIPC_4_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_4_0() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_0);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_4_0_0, IPC_4_0_1);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_4 = INSTANCE.getIPC_4();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_4() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(), IPC_4_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression(), IPC_4_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_5_0_0_0 = INSTANCE.getIPC_5_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_5_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("composite instance pointcut", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder IPC_5_0_0_1 = INSTANCE.getIPC_5_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder getIPC_5_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder(org.kardo.language.ipc.IpcPackage.eINSTANCE.getCompositeInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__NAME), "IDENTIFIER", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace IPC_5_0_0_2 = INSTANCE.getIPC_5_0_0_2();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getIPC_5_0_0_2() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace(0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_5_0_0_3_0_0_0 = INSTANCE.getIPC_5_0_0_3_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_5_0_0_3_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("<", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_5_0_0_3_0_0_1 = INSTANCE.getIPC_5_0_0_3_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_5_0_0_3_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getCompositeInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__TYPE), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.emftext.language.java.types.TypesPackage.eINSTANCE.getTypeReference(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_5_0_0_3_0_0_2 = INSTANCE.getIPC_5_0_0_3_0_0_2();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_5_0_0_3_0_0_2() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(">", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_5_0_0_3_0_0 = INSTANCE.getIPC_5_0_0_3_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_5_0_0_3_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_5_0_0_3_0_0_0, IPC_5_0_0_3_0_0_1, IPC_5_0_0_3_0_0_2);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_5_0_0_3_0 = INSTANCE.getIPC_5_0_0_3_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_5_0_0_3_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_5_0_0_3_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcCompound IPC_5_0_0_3 = INSTANCE.getIPC_5_0_0_3();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcCompound getIPC_5_0_0_3() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcCompound(IPC_5_0_0_3_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.QUESTIONMARK);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_5_0_0_4 = INSTANCE.getIPC_5_0_0_4();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_5_0_0_4() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getCompositeInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__ASSIGN), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.emftext.language.java.operators.OperatorsPackage.eINSTANCE.getAssignmentOperator(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_5_0_0_5 = INSTANCE.getIPC_5_0_0_5();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_5_0_0_5() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getCompositeInstancePointcut().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.COMPOSITE_INSTANCE_POINTCUT__COMPEXPR), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcComposition(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_5_0_0_6 = INSTANCE.getIPC_5_0_0_6();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_5_0_0_6() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(";", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_5_0_0 = INSTANCE.getIPC_5_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_5_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_5_0_0_0, IPC_5_0_0_1, IPC_5_0_0_2, IPC_5_0_0_3, IPC_5_0_0_4, IPC_5_0_0_5, IPC_5_0_0_6);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_5_0 = INSTANCE.getIPC_5_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_5_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_5_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_5 = INSTANCE.getIPC_5();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_5() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getCompositeInstancePointcut(), IPC_5_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_6_0_0_0 = INSTANCE.getIPC_6_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_6_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcComposition().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_COMPOSITION__CHILD), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcCompositionChild(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_6_0_0 = INSTANCE.getIPC_6_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_6_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_6_0_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_6_0 = INSTANCE.getIPC_6_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_6_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_6_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_6 = INSTANCE.getIPC_6();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_6() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcComposition(), IPC_6_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_7_0_0_0 = INSTANCE.getIPC_7_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_7_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcUnion().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_UNION__CHILDREN), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcUnionChild(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_7_0_0_1_0_0_0 = INSTANCE.getIPC_7_0_0_1_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_7_0_0_1_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("union", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment IPC_7_0_0_1_0_0_1 = INSTANCE.getIPC_7_0_0_1_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getIPC_7_0_0_1_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcUnion().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_UNION__CHILDREN), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcUnionChild(), }, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_7_0_0_1_0_0 = INSTANCE.getIPC_7_0_0_1_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_7_0_0_1_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_7_0_0_1_0_0_0, IPC_7_0_0_1_0_0_1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_7_0_0_1_0 = INSTANCE.getIPC_7_0_0_1_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_7_0_0_1_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_7_0_0_1_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcCompound IPC_7_0_0_1 = INSTANCE.getIPC_7_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcCompound getIPC_7_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcCompound(IPC_7_0_0_1_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.STAR);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_7_0_0 = INSTANCE.getIPC_7_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_7_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_7_0_0_0, IPC_7_0_0_1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_7_0 = INSTANCE.getIPC_7_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_7_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_7_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_7 = INSTANCE.getIPC_7();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_7() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcUnion(), IPC_7_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_8_0_0_0 = INSTANCE.getIPC_8_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_8_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("(", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder IPC_8_0_0_1 = INSTANCE.getIPC_8_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder getIPC_8_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS), "IDENTIFIER", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, 1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_8_0_0_2_0_0_0 = INSTANCE.getIPC_8_0_0_2_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_8_0_0_2_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("inter", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder IPC_8_0_0_2_0_0_1 = INSTANCE.getIPC_8_0_0_2_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder getIPC_8_0_0_2_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS), "IDENTIFIER", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_8_0_0_2_0_0 = INSTANCE.getIPC_8_0_0_2_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_8_0_0_2_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_8_0_0_2_0_0_0, IPC_8_0_0_2_0_0_1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_8_0_0_2_0 = INSTANCE.getIPC_8_0_0_2_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_8_0_0_2_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_8_0_0_2_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcCompound IPC_8_0_0_2 = INSTANCE.getIPC_8_0_0_2();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcCompound getIPC_8_0_0_2() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcCompound(IPC_8_0_0_2_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.PLUS);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_8_0_0_3 = INSTANCE.getIPC_8_0_0_3();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_8_0_0_3() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword(")", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_8_0_0 = INSTANCE.getIPC_8_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_8_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_8_0_0_0, IPC_8_0_0_1, IPC_8_0_0_2, IPC_8_0_0_3);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder IPC_8_0_1_0 = INSTANCE.getIPC_8_0_1_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder getIPC_8_0_1_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS), "IDENTIFIER", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword IPC_8_0_1_1_0_0_0 = INSTANCE.getIPC_8_0_1_1_0_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getIPC_8_0_1_1_0_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword("inter", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder IPC_8_0_1_1_0_0_1 = INSTANCE.getIPC_8_0_1_1_0_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder getIPC_8_0_1_1_0_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection().getEStructuralFeature(org.kardo.language.ipc.IpcPackage.IPC_INTERSECTION__TERMS), "IDENTIFIER", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, 0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_8_0_1_1_0_0 = INSTANCE.getIPC_8_0_1_1_0_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_8_0_1_1_0_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_8_0_1_1_0_0_0, IPC_8_0_1_1_0_0_1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_8_0_1_1_0 = INSTANCE.getIPC_8_0_1_1_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_8_0_1_1_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_8_0_1_1_0_0);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcCompound IPC_8_0_1_1 = INSTANCE.getIPC_8_0_1_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcCompound getIPC_8_0_1_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcCompound(IPC_8_0_1_1_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.STAR);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcSequence IPC_8_0_1 = INSTANCE.getIPC_8_0_1();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcSequence getIPC_8_0_1() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcSequence(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_8_0_1_0, IPC_8_0_1_1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcChoice IPC_8_0 = INSTANCE.getIPC_8_0();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcChoice getIPC_8_0() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcChoice(org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, IPC_8_0_0, IPC_8_0_1);
+	}
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcRule IPC_8 = INSTANCE.getIPC_8();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcRule getIPC_8() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcRule(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection(), IPC_8_0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword ASPECTJ_0_0_0_0_0_0_0 = INSTANCE.getASPECTJ_0_0_0_0_0_0_0();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcKeyword getASPECTJ_0_0_0_0_0_0_0() {
@@ -1049,9 +1241,9 @@ public class IpcGrammarInformationProvider {
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getASPECTJ_16_0_0_5() {
 		return new org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace(0, org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE);
 	}
-	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcContainment ASPECTJ_16_0_0_6 = INSTANCE.getASPECTJ_16_0_0_6();
-	private org.kardo.language.ipc.resource.ipc.grammar.IpcContainment getASPECTJ_16_0_0_6() {
-		return new org.kardo.language.ipc.resource.ipc.grammar.IpcContainment(org.kardo.language.aspectj.patterns.PatternsPackage.eINSTANCE.getMethodPattern().getEStructuralFeature(org.kardo.language.aspectj.patterns.PatternsPackage.METHOD_PATTERN__METHODNAME), org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, new org.eclipse.emf.ecore.EClass[] {org.emftext.language.java.references.ReferencesPackage.eINSTANCE.getStringReference(), }, 0);
+	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder ASPECTJ_16_0_0_6 = INSTANCE.getASPECTJ_16_0_0_6();
+	private org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder getASPECTJ_16_0_0_6() {
+		return new org.kardo.language.ipc.resource.ipc.grammar.IpcPlaceholder(org.kardo.language.aspectj.patterns.PatternsPackage.eINSTANCE.getMethodPattern().getEStructuralFeature(org.kardo.language.aspectj.patterns.PatternsPackage.METHOD_PATTERN__METHODNAME), "IDENTIFIER", org.kardo.language.ipc.resource.ipc.grammar.IpcCardinality.ONE, 0);
 	}
 	public final static org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace ASPECTJ_16_0_0_7 = INSTANCE.getASPECTJ_16_0_0_7();
 	private org.kardo.language.ipc.resource.ipc.grammar.IpcWhiteSpace getASPECTJ_16_0_0_7() {
@@ -8238,6 +8430,10 @@ public class IpcGrammarInformationProvider {
 		IPC_2,
 		IPC_3,
 		IPC_4,
+		IPC_5,
+		IPC_6,
+		IPC_7,
+		IPC_8,
 		ASPECTJ_0,
 		ASPECTJ_1,
 		ASPECTJ_2,

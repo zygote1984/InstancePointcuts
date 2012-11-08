@@ -64,6 +64,12 @@ public class AbstractIpcInterpreter<ResultType, ContextType> {
 		if (result != null) {
 			return result;
 		}
+		if (object instanceof org.kardo.language.ipc.Ipc) {
+			result = interprete_org_kardo_language_ipc_Ipc((org.kardo.language.ipc.Ipc) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
 		if (object instanceof org.kardo.language.ipc.IpcExpression) {
 			result = interprete_org_kardo_language_ipc_IpcExpression((org.kardo.language.ipc.IpcExpression) object, context);
 		}
@@ -94,7 +100,47 @@ public class AbstractIpcInterpreter<ResultType, ContextType> {
 		if (result != null) {
 			return result;
 		}
+		if (object instanceof org.kardo.language.ipc.CompositeInstancePointcut) {
+			result = interprete_org_kardo_language_ipc_CompositeInstancePointcut((org.kardo.language.ipc.CompositeInstancePointcut) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.kardo.language.ipc.IpcComposition) {
+			result = interprete_org_kardo_language_ipc_IpcComposition((org.kardo.language.ipc.IpcComposition) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.kardo.language.ipc.IpcUnion) {
+			result = interprete_org_kardo_language_ipc_IpcUnion((org.kardo.language.ipc.IpcUnion) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.kardo.language.ipc.IpcCompositionChild) {
+			result = interprete_org_kardo_language_ipc_IpcCompositionChild((org.kardo.language.ipc.IpcCompositionChild) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.kardo.language.ipc.IpcIntersection) {
+			result = interprete_org_kardo_language_ipc_IpcIntersection((org.kardo.language.ipc.IpcIntersection) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
+		if (object instanceof org.kardo.language.ipc.IpcUnionChild) {
+			result = interprete_org_kardo_language_ipc_IpcUnionChild((org.kardo.language.ipc.IpcUnionChild) object, context);
+		}
+		if (result != null) {
+			return result;
+		}
 		return result;
+	}
+	
+	public ResultType interprete_org_kardo_language_ipc_Ipc(org.kardo.language.ipc.Ipc ipc, ContextType context) {
+		return null;
 	}
 	
 	public ResultType interprete_org_kardo_language_ipc_InstancePointcut(org.kardo.language.ipc.InstancePointcut instancePointcut, ContextType context) {
@@ -118,6 +164,30 @@ public class AbstractIpcInterpreter<ResultType, ContextType> {
 	}
 	
 	public ResultType interprete_org_kardo_language_ipc_AfterEvent(org.kardo.language.ipc.AfterEvent afterEvent, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_kardo_language_ipc_CompositeInstancePointcut(org.kardo.language.ipc.CompositeInstancePointcut compositeInstancePointcut, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_kardo_language_ipc_IpcComposition(org.kardo.language.ipc.IpcComposition ipcComposition, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_kardo_language_ipc_IpcCompositionChild(org.kardo.language.ipc.IpcCompositionChild ipcCompositionChild, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_kardo_language_ipc_IpcUnion(org.kardo.language.ipc.IpcUnion ipcUnion, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_kardo_language_ipc_IpcUnionChild(org.kardo.language.ipc.IpcUnionChild ipcUnionChild, ContextType context) {
+		return null;
+	}
+	
+	public ResultType interprete_org_kardo_language_ipc_IpcIntersection(org.kardo.language.ipc.IpcIntersection ipcIntersection, ContextType context) {
 		return null;
 	}
 	

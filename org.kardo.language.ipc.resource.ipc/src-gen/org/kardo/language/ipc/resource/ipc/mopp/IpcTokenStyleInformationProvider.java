@@ -12,16 +12,25 @@ public class IpcTokenStyleInformationProvider {
 	
 	public org.kardo.language.ipc.resource.ipc.IIpcTokenStyle getDefaultTokenStyle(String tokenName) {
 		if ("instance pointcut".equals(tokenName)) {
-			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0x11}, null, true, false, false, false);
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0xAA}, null, true, false, false, false);
+		}
+		if ("composite instance pointcut".equals(tokenName)) {
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0xAA}, null, true, false, false, false);
 		}
 		if ("UNTIL".equals(tokenName)) {
-			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0x11}, null, true, false, false, false);
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0xAA}, null, true, false, false, false);
 		}
-		if ("after".equals(tokenName)) {
-			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x55, 0x11}, null, true, false, false, false);
+		if ("afterevent".equals(tokenName)) {
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x55, 0xAA}, null, true, false, false, false);
 		}
-		if ("before".equals(tokenName)) {
-			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x55, 0x11}, null, true, false, false, false);
+		if ("beforeevent".equals(tokenName)) {
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x55, 0xAA}, null, true, false, false, false);
+		}
+		if ("inter".equals(tokenName)) {
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x55, 0xAA}, null, true, false, false, false);
+		}
+		if ("union".equals(tokenName)) {
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x55, 0xAA}, null, true, false, false, false);
 		}
 		if ("aspect".equals(tokenName)) {
 			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0x11}, null, true, false, false, false);
@@ -48,6 +57,12 @@ public class IpcTokenStyleInformationProvider {
 			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0x11}, null, true, false, false, false);
 		}
 		if ("if".equals(tokenName)) {
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0x11}, null, true, false, false, false);
+		}
+		if ("after".equals(tokenName)) {
+			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0x11}, null, true, false, false, false);
+		}
+		if ("before".equals(tokenName)) {
 			return new org.kardo.language.ipc.resource.ipc.mopp.IpcTokenStyle(new int[] {0xFF, 0x00, 0x11}, null, true, false, false, false);
 		}
 		if ("->".equals(tokenName)) {

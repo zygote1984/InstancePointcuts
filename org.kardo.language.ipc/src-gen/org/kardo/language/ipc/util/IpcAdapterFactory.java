@@ -14,7 +14,11 @@ import org.emftext.language.java.commons.NamedElement;
 
 import org.emftext.language.java.members.Member;
 
+import org.emftext.language.java.references.ReferenceableElement;
+
 import org.kardo.language.aspectj.commons.AspectMember;
+
+import org.kardo.language.aspectj.pointcuts.Pointcut;
 
 import org.kardo.language.ipc.*;
 
@@ -82,6 +86,11 @@ public class IpcAdapterFactory extends AdapterFactoryImpl
     new IpcSwitch<Adapter>()
     {
       @Override
+      public Adapter caseIpc(Ipc object)
+      {
+        return createIpcAdapter();
+      }
+      @Override
       public Adapter caseInstancePointcut(InstancePointcut object)
       {
         return createInstancePointcutAdapter();
@@ -112,6 +121,36 @@ public class IpcAdapterFactory extends AdapterFactoryImpl
         return createAfterEventAdapter();
       }
       @Override
+      public Adapter caseCompositeInstancePointcut(CompositeInstancePointcut object)
+      {
+        return createCompositeInstancePointcutAdapter();
+      }
+      @Override
+      public Adapter caseIpcComposition(IpcComposition object)
+      {
+        return createIpcCompositionAdapter();
+      }
+      @Override
+      public Adapter caseIpcCompositionChild(IpcCompositionChild object)
+      {
+        return createIpcCompositionChildAdapter();
+      }
+      @Override
+      public Adapter caseIpcUnion(IpcUnion object)
+      {
+        return createIpcUnionAdapter();
+      }
+      @Override
+      public Adapter caseIpcUnionChild(IpcUnionChild object)
+      {
+        return createIpcUnionChildAdapter();
+      }
+      @Override
+      public Adapter caseIpcIntersection(IpcIntersection object)
+      {
+        return createIpcIntersectionAdapter();
+      }
+      @Override
       public Adapter caseCommentable(Commentable object)
       {
         return createCommentableAdapter();
@@ -130,6 +169,16 @@ public class IpcAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAspectMember(AspectMember object)
       {
         return createAspectMemberAdapter();
+      }
+      @Override
+      public Adapter caseReferenceableElement(ReferenceableElement object)
+      {
+        return createReferenceableElementAdapter();
+      }
+      @Override
+      public Adapter casePointcut(Pointcut object)
+      {
+        return createPointcutAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -152,6 +201,21 @@ public class IpcAdapterFactory extends AdapterFactoryImpl
     return modelSwitch.doSwitch((EObject)target);
   }
 
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.kardo.language.ipc.Ipc <em>Ipc</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.kardo.language.ipc.Ipc
+   * @generated
+   */
+  public Adapter createIpcAdapter()
+  {
+    return null;
+  }
 
   /**
    * Creates a new adapter for an object of class '{@link org.kardo.language.ipc.InstancePointcut <em>Instance Pointcut</em>}'.
@@ -244,6 +308,96 @@ public class IpcAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.kardo.language.ipc.CompositeInstancePointcut <em>Composite Instance Pointcut</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.kardo.language.ipc.CompositeInstancePointcut
+   * @generated
+   */
+  public Adapter createCompositeInstancePointcutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.kardo.language.ipc.IpcComposition <em>Composition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.kardo.language.ipc.IpcComposition
+   * @generated
+   */
+  public Adapter createIpcCompositionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.kardo.language.ipc.IpcCompositionChild <em>Composition Child</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.kardo.language.ipc.IpcCompositionChild
+   * @generated
+   */
+  public Adapter createIpcCompositionChildAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.kardo.language.ipc.IpcUnion <em>Union</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.kardo.language.ipc.IpcUnion
+   * @generated
+   */
+  public Adapter createIpcUnionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.kardo.language.ipc.IpcUnionChild <em>Union Child</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.kardo.language.ipc.IpcUnionChild
+   * @generated
+   */
+  public Adapter createIpcUnionChildAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.kardo.language.ipc.IpcIntersection <em>Intersection</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.kardo.language.ipc.IpcIntersection
+   * @generated
+   */
+  public Adapter createIpcIntersectionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.emftext.language.java.commons.Commentable <em>Commentable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -299,6 +453,36 @@ public class IpcAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAspectMemberAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.emftext.language.java.references.ReferenceableElement <em>Referenceable Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.emftext.language.java.references.ReferenceableElement
+   * @generated
+   */
+  public Adapter createReferenceableElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.kardo.language.aspectj.pointcuts.Pointcut <em>Pointcut</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.kardo.language.aspectj.pointcuts.Pointcut
+   * @generated
+   */
+  public Adapter createPointcutAdapter()
   {
     return null;
   }

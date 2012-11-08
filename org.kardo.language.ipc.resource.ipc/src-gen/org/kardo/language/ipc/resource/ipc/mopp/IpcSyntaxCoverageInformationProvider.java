@@ -10,11 +10,15 @@ public class IpcSyntaxCoverageInformationProvider {
 	
 	public org.eclipse.emf.ecore.EClass[] getClassesWithSyntax() {
 		return new org.eclipse.emf.ecore.EClass[] {
+			org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(),
+			org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(),
 			org.kardo.language.ipc.IpcPackage.eINSTANCE.getInstancePointcut(),
 			org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcExpression(),
 			org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcSubExpression(),
-			org.kardo.language.ipc.IpcPackage.eINSTANCE.getAfterEvent(),
-			org.kardo.language.ipc.IpcPackage.eINSTANCE.getBeforeEvent(),
+			org.kardo.language.ipc.IpcPackage.eINSTANCE.getCompositeInstancePointcut(),
+			org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcComposition(),
+			org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcUnion(),
+			org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection(),
 			org.kardo.language.aspectj.commons.CommonsPackage.eINSTANCE.getAspectJCompilationUnit(),
 			org.kardo.language.aspectj.commons.CommonsPackage.eINSTANCE.getAspect(),
 			org.kardo.language.aspectj.pointcuts.PointcutsPackage.eINSTANCE.getCallPointcut(),

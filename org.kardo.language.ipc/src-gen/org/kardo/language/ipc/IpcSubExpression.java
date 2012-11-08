@@ -2,6 +2,8 @@
  */
 package org.kardo.language.ipc;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.kardo.language.ipc.IpcSubExpression#getBefore <em>Before</em>}</li>
- *   <li>{@link org.kardo.language.ipc.IpcSubExpression#getAfter <em>After</em>}</li>
+ *   <li>{@link org.kardo.language.ipc.IpcSubExpression#getEvent <em>Event</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,55 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface IpcSubExpression extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Before</b></em>' containment reference.
+   * Returns the value of the '<em><b>Event</b></em>' containment reference list.
+   * The list contents are of type {@link org.kardo.language.ipc.Event}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Before</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Event</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Before</em>' containment reference.
-   * @see #setBefore(BeforeEvent)
-   * @see org.kardo.language.ipc.IpcPackage#getIpcSubExpression_Before()
-   * @model containment="true"
+   * @return the value of the '<em>Event</em>' containment reference list.
+   * @see org.kardo.language.ipc.IpcPackage#getIpcSubExpression_Event()
+   * @model containment="true" required="true" upper="2"
    * @generated
    */
-  BeforeEvent getBefore();
-
-  /**
-   * Sets the value of the '{@link org.kardo.language.ipc.IpcSubExpression#getBefore <em>Before</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Before</em>' containment reference.
-   * @see #getBefore()
-   * @generated
-   */
-  void setBefore(BeforeEvent value);
-
-  /**
-   * Returns the value of the '<em><b>After</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>After</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>After</em>' containment reference.
-   * @see #setAfter(AfterEvent)
-   * @see org.kardo.language.ipc.IpcPackage#getIpcSubExpression_After()
-   * @model containment="true"
-   * @generated
-   */
-  AfterEvent getAfter();
-
-  /**
-   * Sets the value of the '{@link org.kardo.language.ipc.IpcSubExpression#getAfter <em>After</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>After</em>' containment reference.
-   * @see #getAfter()
-   * @generated
-   */
-  void setAfter(AfterEvent value);
+  EList<Event> getEvent();
 
 } // IpcSubExpression

@@ -68,6 +68,42 @@ public interface IpcFactory extends EFactory
   AfterEvent createAfterEvent();
 
   /**
+   * Returns a new object of class '<em>Composite Instance Pointcut</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Composite Instance Pointcut</em>'.
+   * @generated
+   */
+  CompositeInstancePointcut createCompositeInstancePointcut();
+
+  /**
+   * Returns a new object of class '<em>Composition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Composition</em>'.
+   * @generated
+   */
+  IpcComposition createIpcComposition();
+
+  /**
+   * Returns a new object of class '<em>Union</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Union</em>'.
+   * @generated
+   */
+  IpcUnion createIpcUnion();
+
+  /**
+   * Returns a new object of class '<em>Intersection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Intersection</em>'.
+   * @generated
+   */
+  IpcIntersection createIpcIntersection();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

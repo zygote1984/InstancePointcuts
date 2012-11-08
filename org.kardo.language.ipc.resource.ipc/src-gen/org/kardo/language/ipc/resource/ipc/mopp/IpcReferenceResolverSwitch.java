@@ -13,6 +13,7 @@ public class IpcReferenceResolverSwitch implements org.kardo.language.ipc.resour
 	 */
 	private java.util.Map<Object, Object> options;
 	
+	protected org.kardo.language.ipc.resource.ipc.analysis.IpcIntersectionTermsReferenceResolver ipcIntersectionTermsReferenceResolver = new org.kardo.language.ipc.resource.ipc.analysis.IpcIntersectionTermsReferenceResolver();
 	protected org.kardo.language.ipc.resource.ipc.analysis.IdPatternIdReferenceResolver idPatternIdReferenceResolver = new org.kardo.language.ipc.resource.ipc.analysis.IdPatternIdReferenceResolver();
 	protected org.kardo.language.ipc.resource.ipc.analysis.AdvicePcrefReferenceResolver advicePcrefReferenceResolver = new org.kardo.language.ipc.resource.ipc.analysis.AdvicePcrefReferenceResolver();
 	protected org.kardo.language.ipc.resource.ipc.analysis.ClassifierImportClassifierReferenceResolver classifierImportClassifierReferenceResolver = new org.kardo.language.ipc.resource.ipc.analysis.ClassifierImportClassifierReferenceResolver();
@@ -22,6 +23,10 @@ public class IpcReferenceResolverSwitch implements org.kardo.language.ipc.resour
 	protected org.kardo.language.ipc.resource.ipc.analysis.ClassifierReferenceTargetReferenceResolver classifierReferenceTargetReferenceResolver = new org.kardo.language.ipc.resource.ipc.analysis.ClassifierReferenceTargetReferenceResolver();
 	protected org.kardo.language.ipc.resource.ipc.analysis.ElementReferenceTargetReferenceResolver elementReferenceTargetReferenceResolver = new org.kardo.language.ipc.resource.ipc.analysis.ElementReferenceTargetReferenceResolver();
 	protected org.kardo.language.ipc.resource.ipc.analysis.JumpTargetReferenceResolver jumpTargetReferenceResolver = new org.kardo.language.ipc.resource.ipc.analysis.JumpTargetReferenceResolver();
+	
+	public org.kardo.language.ipc.resource.ipc.IIpcReferenceResolver<org.kardo.language.ipc.IpcIntersection, org.kardo.language.ipc.Ipc> getIpcIntersectionTermsReferenceResolver() {
+		return getResolverChain(org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection_Terms(), ipcIntersectionTermsReferenceResolver);
+	}
 	
 	public org.kardo.language.ipc.resource.ipc.IIpcReferenceResolver<org.kardo.language.aspectj.patterns.IdPattern, org.emftext.language.java.references.Reference> getIdPatternIdReferenceResolver() {
 		return getResolverChain(org.kardo.language.aspectj.patterns.PatternsPackage.eINSTANCE.getIdPattern_Id(), idPatternIdReferenceResolver);
@@ -64,6 +69,7 @@ public class IpcReferenceResolverSwitch implements org.kardo.language.ipc.resour
 			this.options = new java.util.LinkedHashMap<Object, Object>();
 			this.options.putAll(options);
 		}
+		ipcIntersectionTermsReferenceResolver.setOptions(options);
 		idPatternIdReferenceResolver.setOptions(options);
 		advicePcrefReferenceResolver.setOptions(options);
 		classifierImportClassifierReferenceResolver.setOptions(options);
@@ -78,6 +84,14 @@ public class IpcReferenceResolverSwitch implements org.kardo.language.ipc.resour
 	public void resolveFuzzy(String identifier, org.eclipse.emf.ecore.EObject container, org.eclipse.emf.ecore.EReference reference, int position, org.kardo.language.ipc.resource.ipc.IIpcReferenceResolveResult<org.eclipse.emf.ecore.EObject> result) {
 		if (container == null) {
 			return;
+		}
+		if (org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection().isInstance(container)) {
+			IpcFuzzyResolveResult<org.kardo.language.ipc.Ipc> frr = new IpcFuzzyResolveResult<org.kardo.language.ipc.Ipc>(result);
+			String referenceName = reference.getName();
+			org.eclipse.emf.ecore.EStructuralFeature feature = container.eClass().getEStructuralFeature(referenceName);
+			if (feature != null && feature instanceof org.eclipse.emf.ecore.EReference && referenceName != null && referenceName.equals("terms")) {
+				ipcIntersectionTermsReferenceResolver.resolve(identifier, (org.kardo.language.ipc.IpcIntersection) container, (org.eclipse.emf.ecore.EReference) feature, position, true, frr);
+			}
 		}
 		if (org.kardo.language.aspectj.patterns.PatternsPackage.eINSTANCE.getIdPattern().isInstance(container)) {
 			IpcFuzzyResolveResult<org.emftext.language.java.references.Reference> frr = new IpcFuzzyResolveResult<org.emftext.language.java.references.Reference>(result);
@@ -154,6 +168,9 @@ public class IpcReferenceResolverSwitch implements org.kardo.language.ipc.resour
 	}
 	
 	public org.kardo.language.ipc.resource.ipc.IIpcReferenceResolver<? extends org.eclipse.emf.ecore.EObject, ? extends org.eclipse.emf.ecore.EObject> getResolver(org.eclipse.emf.ecore.EStructuralFeature reference) {
+		if (reference == org.kardo.language.ipc.IpcPackage.eINSTANCE.getIpcIntersection_Terms()) {
+			return getResolverChain(reference, ipcIntersectionTermsReferenceResolver);
+		}
 		if (reference == org.kardo.language.aspectj.patterns.PatternsPackage.eINSTANCE.getIdPattern_Id()) {
 			return getResolverChain(reference, idPatternIdReferenceResolver);
 		}

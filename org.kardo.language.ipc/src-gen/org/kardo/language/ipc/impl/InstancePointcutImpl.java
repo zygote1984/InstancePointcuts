@@ -12,9 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.emftext.language.java.types.TypeReference;
 
-import org.kardo.language.aspectj.commons.impl.AspectMemberImpl;
-
-import org.kardo.language.aspectj.pcexp.PcAssignmentOperator;
+import org.kardo.language.aspectj.pointcuts.impl.PointcutImpl;
 
 import org.kardo.language.ipc.InstancePointcut;
 import org.kardo.language.ipc.IpcExpression;
@@ -27,7 +25,6 @@ import org.kardo.language.ipc.IpcPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.kardo.language.ipc.impl.InstancePointcutImpl#getAssign <em>Assign</em>}</li>
  *   <li>{@link org.kardo.language.ipc.impl.InstancePointcutImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.kardo.language.ipc.impl.InstancePointcutImpl#getExpr <em>Expr</em>}</li>
  * </ul>
@@ -35,18 +32,8 @@ import org.kardo.language.ipc.IpcPackage;
  *
  * @generated
  */
-public class InstancePointcutImpl extends AspectMemberImpl implements InstancePointcut
+public class InstancePointcutImpl extends PointcutImpl implements InstancePointcut
 {
-  /**
-   * The cached value of the '{@link #getAssign() <em>Assign</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAssign()
-   * @generated
-   * @ordered
-   */
-  protected PcAssignmentOperator assign;
-
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -86,54 +73,6 @@ public class InstancePointcutImpl extends AspectMemberImpl implements InstancePo
   protected EClass eStaticClass()
   {
     return IpcPackage.Literals.INSTANCE_POINTCUT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public PcAssignmentOperator getAssign()
-  {
-    return assign;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAssign(PcAssignmentOperator newAssign, NotificationChain msgs)
-  {
-    PcAssignmentOperator oldAssign = assign;
-    assign = newAssign;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, IpcPackage.INSTANCE_POINTCUT__ASSIGN, oldAssign, newAssign);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAssign(PcAssignmentOperator newAssign)
-  {
-    if (newAssign != assign)
-    {
-      NotificationChain msgs = null;
-      if (assign != null)
-        msgs = ((InternalEObject)assign).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - IpcPackage.INSTANCE_POINTCUT__ASSIGN, null, msgs);
-      if (newAssign != null)
-        msgs = ((InternalEObject)newAssign).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - IpcPackage.INSTANCE_POINTCUT__ASSIGN, null, msgs);
-      msgs = basicSetAssign(newAssign, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, IpcPackage.INSTANCE_POINTCUT__ASSIGN, newAssign, newAssign));
   }
 
   /**
@@ -242,8 +181,6 @@ public class InstancePointcutImpl extends AspectMemberImpl implements InstancePo
   {
     switch (featureID)
     {
-      case IpcPackage.INSTANCE_POINTCUT__ASSIGN:
-        return basicSetAssign(null, msgs);
       case IpcPackage.INSTANCE_POINTCUT__TYPE:
         return basicSetType(null, msgs);
       case IpcPackage.INSTANCE_POINTCUT__EXPR:
@@ -262,8 +199,6 @@ public class InstancePointcutImpl extends AspectMemberImpl implements InstancePo
   {
     switch (featureID)
     {
-      case IpcPackage.INSTANCE_POINTCUT__ASSIGN:
-        return getAssign();
       case IpcPackage.INSTANCE_POINTCUT__TYPE:
         return getType();
       case IpcPackage.INSTANCE_POINTCUT__EXPR:
@@ -282,9 +217,6 @@ public class InstancePointcutImpl extends AspectMemberImpl implements InstancePo
   {
     switch (featureID)
     {
-      case IpcPackage.INSTANCE_POINTCUT__ASSIGN:
-        setAssign((PcAssignmentOperator)newValue);
-        return;
       case IpcPackage.INSTANCE_POINTCUT__TYPE:
         setType((TypeReference)newValue);
         return;
@@ -305,9 +237,6 @@ public class InstancePointcutImpl extends AspectMemberImpl implements InstancePo
   {
     switch (featureID)
     {
-      case IpcPackage.INSTANCE_POINTCUT__ASSIGN:
-        setAssign((PcAssignmentOperator)null);
-        return;
       case IpcPackage.INSTANCE_POINTCUT__TYPE:
         setType((TypeReference)null);
         return;
@@ -328,8 +257,6 @@ public class InstancePointcutImpl extends AspectMemberImpl implements InstancePo
   {
     switch (featureID)
     {
-      case IpcPackage.INSTANCE_POINTCUT__ASSIGN:
-        return assign != null;
       case IpcPackage.INSTANCE_POINTCUT__TYPE:
         return type != null;
       case IpcPackage.INSTANCE_POINTCUT__EXPR:

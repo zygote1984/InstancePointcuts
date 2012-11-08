@@ -6,8 +6,8 @@
   <foreignModel>ipc.text.ecore</foreignModel>
   <genPackages prefix="Ipc" basePackage="org.kardo.language" disposableProviderFactory="true"
       ecorePackage="ipc.text.ecore#/">
+    <genClasses image="false" ecoreClass="ipc.text.ecore#//Ipc"/>
     <genClasses ecoreClass="ipc.text.ecore#//InstancePointcut">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//InstancePointcut/assign"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//InstancePointcut/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//InstancePointcut/expr"/>
     </genClasses>
@@ -16,13 +16,27 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//IpcExpression/removeExpression"/>
     </genClasses>
     <genClasses ecoreClass="ipc.text.ecore#//IpcSubExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//IpcSubExpression/before"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//IpcSubExpression/after"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//IpcSubExpression/event"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ipc.text.ecore#//Event">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//Event/pcexp"/>
     </genClasses>
     <genClasses ecoreClass="ipc.text.ecore#//BeforeEvent"/>
     <genClasses ecoreClass="ipc.text.ecore#//AfterEvent"/>
+    <genClasses ecoreClass="ipc.text.ecore#//CompositeInstancePointcut">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//CompositeInstancePointcut/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//CompositeInstancePointcut/compexpr"/>
+    </genClasses>
+    <genClasses ecoreClass="ipc.text.ecore#//IpcComposition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//IpcComposition/child"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ipc.text.ecore#//IpcCompositionChild"/>
+    <genClasses ecoreClass="ipc.text.ecore#//IpcUnion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ipc.text.ecore#//IpcUnion/children"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ipc.text.ecore#//IpcUnionChild"/>
+    <genClasses ecoreClass="ipc.text.ecore#//IpcIntersection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ipc.text.ecore#//IpcIntersection/terms"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
