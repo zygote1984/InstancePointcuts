@@ -44,7 +44,7 @@ public class AspectBindTest {
 		EList<EObject> clist = resource.getContents();
 
 		AspectJCompilationUnit content = (AspectJCompilationUnit) resource.getContents().get(0);
-		generator.setOutputPath(URI.createURI("/home/kardelen/workspace/org.kardo.language.test"), true);
+		generator.setOutputPath(URI.createURI("/home/kardelen/workspace/instancepointcuts/instancepc/org.kardo.language.test"), true);
 		System.out.println("[TEST]" + content.toString());
 		EcoreUtil.resolveAll(resource);
 		System.out.println("[TEST]" + resource.toString());

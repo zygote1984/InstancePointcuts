@@ -1,5 +1,21 @@
+package kardidon;
+
+
 public aspect Kardo{
  
-	instance pointcut p1<Integer> : after( call(MyType.m()) && args(instance));	
-
+	instance pointcut pc<String>: 
+	beforeevent(call(public void MyClass->myMethod()) && args(instance)) || 
+	afterevent(call(public void MyClass->myMethod()) && target(instance) && within(ArrayList)) 
+	UNTIL 	
+	beforeevent(call(public void MyClass->myMethod()) && returning(instance)) || 
+	afterevent(call(public void MyClass->myMethod()) && this(instance) && within(ArrayList));
+	
+	instance pointcut pc2<Integer>:
+	beforeevent(call(public Integer SomeClass->foo()) && args(instance));
+	
+	instance pointcut pc3<Integer>:
+	beforeevent(call(public Integer SomeClass->foo()) && args(instance));
+	
+	composite instance pointcut pc4: (pc inter pc2) union pc3;
 }
+
