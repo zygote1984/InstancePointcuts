@@ -13,9 +13,10 @@ import org.emftext.language.java.types.NamespaceClassifierReference
 import org.emftext.language.java.types.TypeReference
 import org.kardo.language.aspectj.patterns.TypePattern
 import org.kardo.language.ipc.resource.ipc.IIpcTextResource
+import org.kardo.language.ipc.resource.ipc.analysis.ClassifierReferenceTargetReferenceResolver
+import org.kardo.language.ipc.generator.IpcPrinterSub
 
 import static org.kardo.language.ipc.generator.Utility.*
-import org.kardo.language.ipc.resource.ipc.analysis.ClassifierReferenceTargetReferenceResolver
 
 
 class Utility {
@@ -23,7 +24,7 @@ class Utility {
 	
 	static ClassifierReferenceTargetReferenceResolver refResolver = new ClassifierReferenceTargetReferenceResolver()
 	static ByteArrayOutputStream output =  new ByteArrayOutputStream()
-	static AspectJPrinterSub printer = new AspectJPrinterSub(output, GeneratorMain::resource as IIpcTextResource)
+	static IpcPrinterSub printer = new org.kardo.language.ipc.generator.IpcPrinterSub(output, GeneratorMain::resource as IIpcTextResource)
 	
 	def static generateImports(List<Import> imports)
 	{

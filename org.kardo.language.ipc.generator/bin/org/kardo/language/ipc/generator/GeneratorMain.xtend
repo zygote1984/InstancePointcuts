@@ -1,27 +1,24 @@
 package org.kardo.language.ipc.generator
 
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IFileSystemAccess
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.emf.ecore.EReference
-import org.eclipse.emf.ecore.util.EcoreUtil
-import org.eclipse.emf.ecore.EObject
 import java.util.HashMap
-import org.eclipse.xtext.generator.JavaIoFileSystemAccess
-import org.kardo.language.aspectj.commons.impl.AspectImpl
-import org.kardo.language.aspectj.commons.AspectJCompilationUnit
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.emf.ecore.util.EcoreUtil
 import org.kardo.language.aspectj.commons.impl.AspectJCompilationUnitImpl
+import org.kardo.language.ipc.Ipc
+
+import static extension org.kardo.language.ipc.generator.GeneratorMain.*
 
 
 class GeneratorMain{
 
 	
 	AspectJCompilationUnitGenerator ajgen
-	
+	public static HashMap<String, Ipc> ipcRegistry = new HashMap
 		
 	boolean print
 	new(boolean print){
-		this.print = print;	
+		this.print = true;	
 	}
 	
 	public static Resource resource = null

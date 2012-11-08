@@ -21,10 +21,10 @@ import org.kardo.language.aspectj.commons.AspectMember;
 import org.kardo.language.aspectj.pcexp.PointcutExpression;
 import org.kardo.language.aspectj.pointcuts.AspectJPointcut;
 import org.kardo.language.aspectj.pointcuts.PrimitivePointcut;
-import org.kardo.language.ipc.InstancePointcut;
-import org.kardo.language.ipc.generator.AspectJPrinterSub;
+import org.kardo.language.ipc.Ipc;
 import org.kardo.language.ipc.generator.GeneratorMain;
 import org.kardo.language.ipc.generator.IpcGenerator;
+import org.kardo.language.ipc.generator.IpcPrinterSub;
 import org.kardo.language.ipc.generator.Utility;
 import org.kardo.language.ipc.resource.ipc.IIpcTextResource;
 
@@ -41,10 +41,10 @@ public class AspectJCompilationUnitGenerator {
     }
   }.apply();
   
-  public static AspectJPrinterSub printer = new Function0<AspectJPrinterSub>() {
-    public AspectJPrinterSub apply() {
-      AspectJPrinterSub _aspectJPrinterSub = new AspectJPrinterSub(AspectJCompilationUnitGenerator.output, ((IIpcTextResource) GeneratorMain.resource));
-      return _aspectJPrinterSub;
+  public static IpcPrinterSub printer = new Function0<IpcPrinterSub>() {
+    public IpcPrinterSub apply() {
+      IpcPrinterSub _ipcPrinterSub = new IpcPrinterSub(AspectJCompilationUnitGenerator.output, ((IIpcTextResource) GeneratorMain.resource));
+      return _ipcPrinterSub;
     }
   }.apply();
   
@@ -142,10 +142,10 @@ public class AspectJCompilationUnitGenerator {
           }
         }
         {
-          if ((p instanceof InstancePointcut)) {
+          if ((p instanceof Ipc)) {
             _builder.append("\t");
-            CharSequence _generateIpc = this.ipcgen.generateIpc(((InstancePointcut) p));
-            _builder.append(_generateIpc, "	");
+            CharSequence _generate = this.ipcgen.generate(((Ipc) p));
+            _builder.append(_generate, "	");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -200,8 +200,8 @@ public class AspectJCompilationUnitGenerator {
       AspectJCompilationUnitGenerator.printer.print(p);
       String value = AspectJCompilationUnitGenerator.output.toString();
       AspectJCompilationUnitGenerator.output.reset();
-      AspectJPrinterSub _aspectJPrinterSub = new AspectJPrinterSub(AspectJCompilationUnitGenerator.output, ((IIpcTextResource) this.resource));
-      AspectJCompilationUnitGenerator.printer = _aspectJPrinterSub;
+      IpcPrinterSub _ipcPrinterSub = new IpcPrinterSub(AspectJCompilationUnitGenerator.output, ((IIpcTextResource) this.resource));
+      AspectJCompilationUnitGenerator.printer = _ipcPrinterSub;
       return value;
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -213,8 +213,8 @@ public class AspectJCompilationUnitGenerator {
       AspectJCompilationUnitGenerator.printer.print(exp);
       String value = AspectJCompilationUnitGenerator.output.toString();
       AspectJCompilationUnitGenerator.output.reset();
-      AspectJPrinterSub _aspectJPrinterSub = new AspectJPrinterSub(AspectJCompilationUnitGenerator.output, ((IIpcTextResource) this.resource));
-      AspectJCompilationUnitGenerator.printer = _aspectJPrinterSub;
+      IpcPrinterSub _ipcPrinterSub = new IpcPrinterSub(AspectJCompilationUnitGenerator.output, ((IIpcTextResource) this.resource));
+      AspectJCompilationUnitGenerator.printer = _ipcPrinterSub;
       return value;
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -226,8 +226,8 @@ public class AspectJCompilationUnitGenerator {
       AspectJCompilationUnitGenerator.printer.print(exp);
       String value = AspectJCompilationUnitGenerator.output.toString();
       AspectJCompilationUnitGenerator.output.reset();
-      AspectJPrinterSub _aspectJPrinterSub = new AspectJPrinterSub(AspectJCompilationUnitGenerator.output, ((IIpcTextResource) GeneratorMain.resource));
-      AspectJCompilationUnitGenerator.printer = _aspectJPrinterSub;
+      IpcPrinterSub _ipcPrinterSub = new IpcPrinterSub(AspectJCompilationUnitGenerator.output, ((IIpcTextResource) GeneratorMain.resource));
+      AspectJCompilationUnitGenerator.printer = _ipcPrinterSub;
       return value;
     } catch (Exception _e) {
       throw Exceptions.sneakyThrow(_e);

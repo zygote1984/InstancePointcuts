@@ -8,10 +8,15 @@ import org.kardo.language.ipc.IpcExpression
 import org.kardo.language.ipc.IpcSubExpression
 import org.kardo.language.aspectj.pcexp.PointcutExpression
 import org.kardo.language.ipc.resource.ipc.IIpcTextResource
+import org.kardo.language.ipc.BeforeEvent
+import org.kardo.language.ipc.AfterEvent
+import org.kardo.language.ipc.generator.IpcPrinterSub
+import org.kardo.language.ipc.Ipc
+import org.kardo.language.ipc.CompositeInstancePointcut
 
 class IpcGenerator {
 	
-	AspectJPrinterSub printer
+	IpcPrinterSub printer
 	ByteArrayOutputStream output =  new ByteArrayOutputStream()
 	Resource resource
 	ALIA4JGenerator aliagen = new ALIA4JGenerator
@@ -19,20 +24,27 @@ class IpcGenerator {
 	new(Resource resource)
 	{
 		this.resource = resource
-		printer = new AspectJPrinterSub(output,resource as IIpcTextResource)
+		printer = new org.kardo.language.ipc.generator.IpcPrinterSub(output,resource as IIpcTextResource)
 		
 	}
 	
 	
-	def generateIpc(InstancePointcut pc)	
+	def generate(Ipc ipc)	
 	{
-
 		'''
+		«IF ipc instanceof InstancePointcut»
+		«var pc = ipc as InstancePointcut»
 		«generateMonitoringPointcuts(pc)»
 		«generateInstancePc(pc, PcExpType::SELECT)»
 		«IF pc.expr.removeExpression != null»
+			«System::out.println("Remove Expression is present")»
 			«generateInstancePc(pc, PcExpType::REMOVE)»
 		«ENDIF»				
+		«ENDIF»
+		«IF ipc instanceof CompositeInstancePointcut»
+		«var pc = ipc as CompositeInstancePointcut»
+		«generateCompositeIpc(pc)»
+		«ENDIF»
 		'''
 	}
 	
@@ -61,6 +73,15 @@ class IpcGenerator {
 		}
 	}
 	
+	
+	def generateCompositeIpc(CompositeInstancePointcut pc){
+		var boolean inferType = false;
+		if(pc.type == null)
+			inferType = true;
+			
+		var expr = pc.compexpr
+		System::out.println(expr)
+	}
 	def generateMonitoringPointcuts(InstancePointcut ip)		
 	'''
 	«var adviceTarget = ip.name.toFirstUpper + "AdviceTarget"»
@@ -73,20 +94,22 @@ class IpcGenerator {
 	//INSTANCE POINTCUT EXPRESSION GENERATOR
 	def generateIpExpression(IpcSubExpression exp, String exptype)
 	'''
-		«IF(exp.before != null)»
-			«aliagen.ipToALIA(AspectJCompilationUnitGenerator::generateExpression(exp.before.pcexp as PointcutExpression), "b"+exptype)»
+		«FOR e:exp.event»
+		«IF(e instanceof BeforeEvent)»
+			«aliagen.ipToALIA(AspectJCompilationUnitGenerator::generateExpression(e.pcexp as PointcutExpression), "b"+exptype)»
 		«ENDIF»
-		«IF(exp.after != null)»
-			«aliagen.ipToALIA(AspectJCompilationUnitGenerator::generateExpression(exp.after.pcexp as PointcutExpression), "a"+exptype)»
+		«IF(e instanceof AfterEvent)»
+			«aliagen.ipToALIA(AspectJCompilationUnitGenerator::generateExpression(e.pcexp as PointcutExpression), "a"+exptype)»
 		«ENDIF»	
+		«ENDFOR»
 	'''
 	
 	def generateSetMaintenanceClass(InstancePointcut ip){
 		var adviceTarget = ip.name.toFirstUpper + "AdviceTarget"
-		FileCreator::instance.generateFile(adviceTarget + ".java",generateSetMaintenanctClassBody(ip))
+		FileCreator::instance.generateFile(adviceTarget + ".java",generateSetMaintenanceClassContent(ip))
 	}
 	
-	def generateSetMaintenanctClassBody(InstancePointcut ip)
+	def generateSetMaintenanceClassContent(InstancePointcut ip)
 	'''
 	import java.util.*;
 	«var adviceTarget = ip.name.toFirstUpper + "AdviceTarget"»

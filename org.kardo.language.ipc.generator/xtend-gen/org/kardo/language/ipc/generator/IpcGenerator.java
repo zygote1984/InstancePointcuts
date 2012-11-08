@@ -2,6 +2,7 @@ package org.kardo.language.ipc.generator;
 
 import com.google.common.base.Objects;
 import java.io.ByteArrayOutputStream;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
@@ -10,20 +11,24 @@ import org.emftext.language.java.types.TypeReference;
 import org.kardo.language.aspectj.pcexp.PointcutExpression;
 import org.kardo.language.ipc.AfterEvent;
 import org.kardo.language.ipc.BeforeEvent;
+import org.kardo.language.ipc.CompositeInstancePointcut;
+import org.kardo.language.ipc.Event;
 import org.kardo.language.ipc.InstancePointcut;
+import org.kardo.language.ipc.Ipc;
+import org.kardo.language.ipc.IpcComposition;
 import org.kardo.language.ipc.IpcExpression;
 import org.kardo.language.ipc.IpcSubExpression;
 import org.kardo.language.ipc.generator.ALIA4JGenerator;
 import org.kardo.language.ipc.generator.AspectJCompilationUnitGenerator;
-import org.kardo.language.ipc.generator.AspectJPrinterSub;
 import org.kardo.language.ipc.generator.FileCreator;
+import org.kardo.language.ipc.generator.IpcPrinterSub;
 import org.kardo.language.ipc.generator.PcExpType;
 import org.kardo.language.ipc.generator.Utility;
 import org.kardo.language.ipc.resource.ipc.IIpcTextResource;
 
 @SuppressWarnings("all")
 public class IpcGenerator {
-  private AspectJPrinterSub printer;
+  private IpcPrinterSub printer;
   
   private ByteArrayOutputStream output = new Function0<ByteArrayOutputStream>() {
     public ByteArrayOutputStream apply() {
@@ -43,25 +48,41 @@ public class IpcGenerator {
   
   public IpcGenerator(final Resource resource) {
     this.resource = resource;
-    AspectJPrinterSub _aspectJPrinterSub = new AspectJPrinterSub(this.output, ((IIpcTextResource) resource));
-    this.printer = _aspectJPrinterSub;
+    IpcPrinterSub _ipcPrinterSub = new IpcPrinterSub(this.output, ((IIpcTextResource) resource));
+    this.printer = _ipcPrinterSub;
   }
   
-  public CharSequence generateIpc(final InstancePointcut pc) {
+  public CharSequence generate(final Ipc ipc) {
     StringConcatenation _builder = new StringConcatenation();
-    CharSequence _generateMonitoringPointcuts = this.generateMonitoringPointcuts(pc);
-    _builder.append(_generateMonitoringPointcuts, "");
-    _builder.newLineIfNotEmpty();
-    CharSequence _generateInstancePc = this.generateInstancePc(pc, PcExpType.SELECT);
-    _builder.append(_generateInstancePc, "");
-    _builder.newLineIfNotEmpty();
     {
-      IpcExpression _expr = pc.getExpr();
-      IpcSubExpression _removeExpression = _expr.getRemoveExpression();
-      boolean _notEquals = (!Objects.equal(_removeExpression, null));
-      if (_notEquals) {
-        CharSequence _generateInstancePc_1 = this.generateInstancePc(pc, PcExpType.REMOVE);
-        _builder.append(_generateInstancePc_1, "");
+      if ((ipc instanceof InstancePointcut)) {
+        InstancePointcut pc = ((InstancePointcut) ipc);
+        _builder.newLineIfNotEmpty();
+        CharSequence _generateMonitoringPointcuts = this.generateMonitoringPointcuts(pc);
+        _builder.append(_generateMonitoringPointcuts, "");
+        _builder.newLineIfNotEmpty();
+        CharSequence _generateInstancePc = this.generateInstancePc(pc, PcExpType.SELECT);
+        _builder.append(_generateInstancePc, "");
+        _builder.newLineIfNotEmpty();
+        {
+          IpcExpression _expr = pc.getExpr();
+          IpcSubExpression _removeExpression = _expr.getRemoveExpression();
+          boolean _notEquals = (!Objects.equal(_removeExpression, null));
+          if (_notEquals) {
+            System.out.println("Remove Expression is present");
+            _builder.newLineIfNotEmpty();
+            CharSequence _generateInstancePc_1 = this.generateInstancePc(pc, PcExpType.REMOVE);
+            _builder.append(_generateInstancePc_1, "");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    {
+      if ((ipc instanceof CompositeInstancePointcut)) {
+        CompositeInstancePointcut pc_1 = ((CompositeInstancePointcut) ipc);
+        _builder.newLineIfNotEmpty();
+        this.generateCompositeIpc(pc_1);
         _builder.newLineIfNotEmpty();
       }
     }
@@ -117,6 +138,17 @@ public class IpcGenerator {
     return _xblockexpression;
   }
   
+  public void generateCompositeIpc(final CompositeInstancePointcut pc) {
+    boolean inferType = false;
+    TypeReference _type = pc.getType();
+    boolean _equals = Objects.equal(_type, null);
+    if (_equals) {
+      inferType = true;
+    }
+    IpcComposition expr = pc.getCompexpr();
+    System.out.println(expr);
+  }
+  
   public CharSequence generateMonitoringPointcuts(final InstancePointcut ip) {
     StringConcatenation _builder = new StringConcatenation();
     String _name = ip.getName();
@@ -154,29 +186,28 @@ public class IpcGenerator {
   public CharSequence generateIpExpression(final IpcSubExpression exp, final String exptype) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      BeforeEvent _before = exp.getBefore();
-      boolean _notEquals = (!Objects.equal(_before, null));
-      if (_notEquals) {
-        BeforeEvent _before_1 = exp.getBefore();
-        PointcutExpression _pcexp = _before_1.getPcexp();
-        String _generateExpression = AspectJCompilationUnitGenerator.generateExpression(((PointcutExpression) _pcexp));
-        String _plus = ("b" + exptype);
-        CharSequence _ipToALIA = this.aliagen.ipToALIA(_generateExpression, _plus);
-        _builder.append(_ipToALIA, "");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      AfterEvent _after = exp.getAfter();
-      boolean _notEquals_1 = (!Objects.equal(_after, null));
-      if (_notEquals_1) {
-        AfterEvent _after_1 = exp.getAfter();
-        PointcutExpression _pcexp_1 = _after_1.getPcexp();
-        String _generateExpression_1 = AspectJCompilationUnitGenerator.generateExpression(((PointcutExpression) _pcexp_1));
-        String _plus_1 = ("a" + exptype);
-        CharSequence _ipToALIA_1 = this.aliagen.ipToALIA(_generateExpression_1, _plus_1);
-        _builder.append(_ipToALIA_1, "");
-        _builder.newLineIfNotEmpty();
+      EList<Event> _event = exp.getEvent();
+      for(final Event e : _event) {
+        {
+          if ((e instanceof BeforeEvent)) {
+            PointcutExpression _pcexp = e.getPcexp();
+            String _generateExpression = AspectJCompilationUnitGenerator.generateExpression(((PointcutExpression) _pcexp));
+            String _plus = ("b" + exptype);
+            CharSequence _ipToALIA = this.aliagen.ipToALIA(_generateExpression, _plus);
+            _builder.append(_ipToALIA, "");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        {
+          if ((e instanceof AfterEvent)) {
+            PointcutExpression _pcexp_1 = e.getPcexp();
+            String _generateExpression_1 = AspectJCompilationUnitGenerator.generateExpression(((PointcutExpression) _pcexp_1));
+            String _plus_1 = ("a" + exptype);
+            CharSequence _ipToALIA_1 = this.aliagen.ipToALIA(_generateExpression_1, _plus_1);
+            _builder.append(_ipToALIA_1, "");
+            _builder.newLineIfNotEmpty();
+          }
+        }
       }
     }
     return _builder;
@@ -187,11 +218,11 @@ public class IpcGenerator {
     String _firstUpper = StringExtensions.toFirstUpper(_name);
     String adviceTarget = (_firstUpper + "AdviceTarget");
     String _plus = (adviceTarget + ".java");
-    CharSequence _generateSetMaintenanctClassBody = this.generateSetMaintenanctClassBody(ip);
-    FileCreator.instance.generateFile(_plus, _generateSetMaintenanctClassBody);
+    CharSequence _generateSetMaintenanceClassContent = this.generateSetMaintenanceClassContent(ip);
+    FileCreator.instance.generateFile(_plus, _generateSetMaintenanceClassContent);
   }
   
-  public CharSequence generateSetMaintenanctClassBody(final InstancePointcut ip) {
+  public CharSequence generateSetMaintenanceClassContent(final InstancePointcut ip) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import java.util.*;");
     _builder.newLine();

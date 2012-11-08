@@ -8,9 +8,9 @@ import org.kardo.language.aspectj.resource.aspectj.mopp.AspectjPrinter;
 import org.kardo.language.ipc.resource.ipc.IIpcTextResource;
 import org.kardo.language.ipc.resource.ipc.mopp.IpcPrinter;
 
-public class AspectJPrinterSub extends IpcPrinter {
+public class IpcPrinterSub extends IpcPrinter {
 
-	public AspectJPrinterSub(OutputStream outputStream,
+	public IpcPrinterSub(OutputStream outputStream,
 			IIpcTextResource resource) {
 		super(outputStream, resource);
 		// TODO Auto-generated constructor stub

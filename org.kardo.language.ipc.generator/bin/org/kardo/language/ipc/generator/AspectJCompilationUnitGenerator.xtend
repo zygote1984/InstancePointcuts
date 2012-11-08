@@ -8,10 +8,15 @@ import org.kardo.language.aspectj.commons.AspectMember
 import org.kardo.language.aspectj.pcexp.PointcutExpression
 import org.kardo.language.aspectj.pointcuts.AspectJPointcut
 import org.kardo.language.aspectj.pointcuts.PrimitivePointcut
-import static extension org.kardo.language.ipc.generator.AspectJCompilationUnitGenerator.*
 import org.kardo.language.aspectj.commons.Aspect
 import org.kardo.language.ipc.resource.ipc.IIpcTextResource
 import org.kardo.language.ipc.InstancePointcut
+import org.kardo.language.ipc.generator.IpcPrinterSub
+
+import static extension org.kardo.language.ipc.generator.AspectJCompilationUnitGenerator.*
+import org.kardo.language.ipc.CompositeInstancePointcut
+import org.kardo.language.ipc.Ipc
+import java.util.HashMap
 
 class AspectJCompilationUnitGenerator{
 	
@@ -19,10 +24,11 @@ class AspectJCompilationUnitGenerator{
 	boolean print = true
 	public static String packageNameAspect 
 	public static ByteArrayOutputStream output =  new ByteArrayOutputStream()
-	public static AspectJPrinterSub printer =  new AspectJPrinterSub(output,GeneratorMain::resource as IIpcTextResource)
+	public static IpcPrinterSub printer =  new org.kardo.language.ipc.generator.IpcPrinterSub(output,GeneratorMain::resource as IIpcTextResource)
 	AspectJCompilationUnit compilationUnit
 	IpcGenerator ipcgen = new IpcGenerator(GeneratorMain::resource)
 	Resource resource = GeneratorMain::resource
+
 	
 	new()
 	{
@@ -62,8 +68,8 @@ class AspectJCompilationUnitGenerator{
 		«IF p instanceof AspectJPointcut»
 			«generateAJPointcut(p as AspectJPointcut)»
 		«ENDIF»
-		«IF p instanceof InstancePointcut»
-			«ipcgen.generateIpc(p as InstancePointcut)»
+		«IF p instanceof Ipc»
+			«ipcgen.generate(p as Ipc)»
 		«ENDIF»
 		«ENDFOR»
 	}
@@ -83,7 +89,7 @@ class AspectJCompilationUnitGenerator{
 		printer.print(p)
 		var value = output.toString
 		output.reset	
-		printer = new AspectJPrinterSub(output,resource as IIpcTextResource)
+		printer = new org.kardo.language.ipc.generator.IpcPrinterSub(output,resource as IIpcTextResource)
 		return value
 	}
 	
@@ -94,7 +100,7 @@ class AspectJCompilationUnitGenerator{
 		printer.print(exp)
 		var value = output.toString
 		output.reset	
-		printer = new AspectJPrinterSub(output,resource as IIpcTextResource)
+		printer = new org.kardo.language.ipc.generator.IpcPrinterSub(output,resource as IIpcTextResource)
 		return value
 	}
 	
@@ -104,7 +110,7 @@ class AspectJCompilationUnitGenerator{
 		printer.print(exp)
 		var value = output.toString
 		output.reset	
-		printer = new AspectJPrinterSub(output,GeneratorMain::resource as IIpcTextResource)
+		printer = new org.kardo.language.ipc.generator.IpcPrinterSub(output,GeneratorMain::resource as IIpcTextResource)
 		return value
 	}
 	

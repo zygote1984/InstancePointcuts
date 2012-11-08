@@ -22,8 +22,8 @@ import org.emftext.language.java.types.NamespaceClassifierReference;
 import org.emftext.language.java.types.Type;
 import org.emftext.language.java.types.TypeReference;
 import org.kardo.language.aspectj.patterns.TypePattern;
-import org.kardo.language.ipc.generator.AspectJPrinterSub;
 import org.kardo.language.ipc.generator.GeneratorMain;
+import org.kardo.language.ipc.generator.IpcPrinterSub;
 import org.kardo.language.ipc.resource.ipc.IIpcTextResource;
 import org.kardo.language.ipc.resource.ipc.analysis.ClassifierReferenceTargetReferenceResolver;
 
@@ -43,10 +43,10 @@ public class Utility {
     }
   }.apply();
   
-  private static AspectJPrinterSub printer = new Function0<AspectJPrinterSub>() {
-    public AspectJPrinterSub apply() {
-      AspectJPrinterSub _aspectJPrinterSub = new AspectJPrinterSub(Utility.output, ((IIpcTextResource) GeneratorMain.resource));
-      return _aspectJPrinterSub;
+  private static IpcPrinterSub printer = new Function0<IpcPrinterSub>() {
+    public IpcPrinterSub apply() {
+      IpcPrinterSub _ipcPrinterSub = new IpcPrinterSub(Utility.output, ((IIpcTextResource) GeneratorMain.resource));
+      return _ipcPrinterSub;
     }
   }.apply();
   

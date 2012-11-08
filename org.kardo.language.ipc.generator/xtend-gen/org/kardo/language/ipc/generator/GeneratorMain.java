@@ -1,6 +1,7 @@
 package org.kardo.language.ipc.generator;
 
 import com.google.common.collect.Iterators;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -9,9 +10,11 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.emftext.language.java.classifiers.ConcreteClassifier;
 import org.kardo.language.aspectj.commons.impl.AspectJCompilationUnitImpl;
+import org.kardo.language.ipc.Ipc;
 import org.kardo.language.ipc.generator.AspectJCompilationUnitGenerator;
 import org.kardo.language.ipc.generator.FileCreator;
 import org.kardo.language.ipc.generator.GeneratorInitializer;
@@ -20,10 +23,17 @@ import org.kardo.language.ipc.generator.GeneratorInitializer;
 public class GeneratorMain {
   private AspectJCompilationUnitGenerator ajgen;
   
+  public static HashMap<String,Ipc> ipcRegistry = new Function0<HashMap<String,Ipc>>() {
+    public HashMap<String,Ipc> apply() {
+      HashMap<String,Ipc> _hashMap = new HashMap<String,Ipc>();
+      return _hashMap;
+    }
+  }.apply();
+  
   private boolean print;
   
   public GeneratorMain(final boolean print) {
-    this.print = print;
+    this.print = true;
   }
   
   public static Resource resource = null;
